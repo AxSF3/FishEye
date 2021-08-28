@@ -1,0 +1,27 @@
+export const ELEMENTHTML = {
+    worker : [...document.querySelectorAll(".photographer")],
+    tagNavigation : [...document.querySelectorAll(".index_nav a")],
+    allTags : document.querySelector(".all_tags"),
+    namePhotographer : [...document.querySelectorAll(".name_photographer")],
+    country : [...document.querySelectorAll(".moreinfo__country")],
+    slogan : [...document.querySelectorAll(".moreinfo__slogan")],
+    price : [...document.querySelectorAll(".moreinfo__price")],
+    tags : [...document.querySelectorAll(".tag")],
+    header : document.querySelector(".pages-header"),
+    pictureProfil : document.querySelector(".picture-profil"),
+    mainPageElement : document.querySelector(".pages-main"),
+    container : document.querySelector(".container-picture"),
+    photo : document.querySelector('.photo'),
+    icon: [...document.querySelectorAll(".fa-heart")],
+    nameMember : document.querySelector(".profil_photographer__name"),
+    localisationMember : document.querySelector(".info_photographer__country"), 
+    sloganMember : document.querySelector(".info_photographer__slogan"),
+    tagsMember : [...document.querySelectorAll(".tagofphotographer")],
+    pricePhotographer : document.querySelector(".price"),
+    totalMedia : document.querySelector(".total_media"),
+    video : document.querySelector("video"),
+    movie : document.querySelector(".movie"),
+    photographertag : [...document.querySelectorAll(".photographer__tag span")],
+    photographertagprofil : [...document.querySelectorAll(".container_tag span")]
+}
+

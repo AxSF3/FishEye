@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+    
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
+    <title>Nabeel Bradford | FishEye</title>
+    
+</head>
+
+<body>
+    <header class="pages-header">
+        <a aria-label="Retour page d'acceuil" class="img_link" href="index.html"><img class="logo" src="ressources/Logo_FishEye.png" alt="FishEye Home Page" /></a>
+        <p class="total_media"></p>
+    </header>
+    <main class="pages-main">
+        <div class="content_profil">
+            <header class="profil_photographer">
+                <h1 tabindex="0" class="profil_photographer__name">Nabeel Bradford</h1>
+                <button aria-label="Contactez-moi"  class="contact_photographer">Contactez-moi</button>
+            </header>
+            <article tabindex="0" aria-label="Information sur Nabeel Bradford" class="info_photographer">
+                <p tabindex="0" class="info_photographer__country" lang="en"></p>
+                <p tabindex="0" class="info_photographer__slogan"></p>
+                <div class="container_tag">
+                    <span class="tagofphotographer"></span>
+                    <span class="tagofphotographer"></span>
+                </div>
+                    <img tabindex="0" aria-label="Photo de Nabeel Bradford" class="picture-profil" src="." alt="Nabeel Bradford">
+            </article>
+        </div>
+        <section tabindex="0" aria-label="Travaux du photographe" class="work_photographer">
+            <h2 class="hiddenElement">Echantillon des travaux du photographes</h2>
+            <form action="#" method="get" class="form_organize">
+                <label for="organize">Trier par</label>
+                <select name="organize" id="organize" class="organize">
+                    <option value="popularite">Popularité</option>
+                    <option value="date">Date</option>
+                    <option value="titre">Titre</option>
+                </select>
+            </form>
+            <div class="container-picture"></div>
+            </section>
+            <div class="like_and_price">
+                <p tabindex="0" class="liked">297081<span role="button" class="fas fa-heart"></span></p>
+                <p tabindex="0" class="price"></p>
+            </div>
+        </main>
+
+    <div tabindex="0" role="dialog" aria-label="Modale de contact" class="modal_contact">
+        <div class="content_modal">
+            <header class="head_forms">
+                <h1 tabindex="0">Contactez-moi <br />Nabeel Bradford</h1>
+                <button aria-label="Fermer la modal" class="close_modal">x</button>
+            </header>
+            <form action="#" method="POST" class="forms_photographer">
+                <div role="group" aria-labelledby="prenom" class="formData">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="firstname" class="firstname"  aria-required="true" />
+                    <p class="errorMessage" id="errorP"></p>
+                </div>
+                <div role="group" aria-labelledby="nom" class="formData">
+                    <label for="nom">Nom</label>
+                    <input  type="text" id="nom" name="lastname" class="lastname"   aria-required="true" />
+                    <p class="errorMessage" id="errorN"></p>
+                </div>
+                <div role="group" aria-labelledby="email" class="formData">
+                    <label for="email">Email</label>
+                    <input id="email" name="mail" class="mail" aria-required="true"/>
+                    <p class="errorMessage" id="errorE"></p>
+                </div>
+                <div role="group" aria-labelledby="message" class="formData">
+                    <label for="message">Votre message</label>
+                    <textarea  name="message" id="message" aria-required="true"></textarea>
+                    <p class="errorMessage" id="errorM"></p>
+                </div>
+                <input aria-label="Envoyer votre message" class="senddata" type="submit" value="Envoyer" />
+            </form>
+        </div>
+    </div>
+    <div tabindex="0" role="dialog" class="lightbox">
+        <span class="close_lightbox">X</span>
+        <div class="content_lightbox">
+            <button aria-label="Image précédente" class="btn previous"><span class="fas fa-chevron-left"></span></button>
+            <figure>
+                <img class="photo" src="." alt="">
+                <video class="movie" src=".">
+                    <track kind="captions" src="caption_video/nabeel.vtt" srclang="fr" label="sous-titre français">
+                </video>
+                <figcaption></figcaption>
+            </figure>
+            <button aria-label="image suivante" class="btn next"><span class="fas fa-chevron-right"></span></button>
+        </div>
+    </div>
+    <script type="module" src="Javascript/nabeel.js"></script>
+</body>
+</html>
