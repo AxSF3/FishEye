@@ -15,15 +15,15 @@ export default class PhotographerList{ // Créer une class "PhotographerList"
 
     let filteredPhotographersArray = [];
     filterTags.forEach(filterTag => {
-      const filteredPhotographers = this.photographers.filter((photographer) => photographer.tags.includes(filterTag));
+      const filteredPhotographers = this.photographers.filter((photographer) => photographer.tags.forEach(filterTag));
+      
       filteredPhotographersArray.push(filteredPhotographers);
-  
+      console.log(filteredPhotographers);
     });
     return filteredPhotographersArray;
     
   }
 
-  
   
   displayRelevantCards(selectedTags) {
     this.selector.setAttribute('tabindex', '0');

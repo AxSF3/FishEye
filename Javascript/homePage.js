@@ -4,9 +4,9 @@ import Header from './header.js';
 export default class HomePage {
 
   static getData() {
-    return fetch('data.json')
-    .then(response => response.json())
-    .then(data => {
+    return fetch('data.json') /* Appeler l'API Fetch */
+    .then(response => response.json()) /*  Convertir res en données JSON */
+    .then(data => { /* Traiter les données JSON */
       HomePage.data;
       return data;
     })
