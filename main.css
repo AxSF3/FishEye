@@ -48,6 +48,7 @@ body {
     margin: 2px;
     padding: 3px 4px;
     color: #901C1C;
+    cursor: pointer;
   }
   .tag.active {
     background-color: #901C1C;
@@ -435,3 +436,123 @@ body {
   }
   
   /* PAGES PHOTOGRAPHES */
+
+
+
+  .media-selection {
+    display: flex;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 30px 0;
+  }
+  @media screen and (max-width: 380px) {
+    .media-selection {
+      display: none;
+    }
+  }
+  .media-selection .orderby {
+    padding-top: 10px;
+    margin-right: 35px;
+  }
+  .media-selection .dropdown {
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    background-color: #901C1C;
+    border-radius: 5px;
+    position: relative;
+  }
+  .media-selection .dropdown-toggle {
+    width: 170px;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    background-color: #901C1C;
+    border-radius: 5px;
+    border: none;
+    letter-spacing: 1px;
+    text-align: left;
+    padding: 15px;
+    transition: all 0.5s;
+  }
+  .media-selection .dropdown-toggle:hover {
+    cursor: pointer;
+    background-color: #DB8876;
+  }
+  .media-selection .arrow {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border: 2px solid;
+    border-color: transparent transparent white white;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 17px;
+    right: 17px;
+  }
+  
+  .dropdown-menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #901C1C;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+    display: none;
+  }
+  .dropdown-menu li {
+    list-style-type: none;
+  }
+  .dropdown-menu .option {
+    width: 100%;
+    font-family: "DM Sans", sans-serif;
+    font-weight: normal;
+    color: white;
+    font-size: 18px;
+    background-color: #901C1C;
+    border-radius: 5px;
+    border: none;
+    letter-spacing: 1px;
+    text-align: left;
+    padding: 15px;
+    transition: all 0.5s;
+    position: relative;
+  }
+  .dropdown-menu .option:hover {
+    cursor: pointer;
+    background-color: #DB8876;
+  }
+  .dropdown-menu .option::before {
+    content: "";
+    width: 90%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 5%;
+  }
+  
+  .arrow.active {
+    transform: translateY(50%) rotate(-225deg);
+  }
+  
+  .media-gallery {
+    display: flex;
+   
+    flex-wrap: wrap;
+    padding-bottom: 35px;
+  }
+  @media screen and (max-width: 380px) {
+    .media-gallery {
+      padding-bottom: 80px;
+    }
+  }
+
+  
+  .media-card {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
