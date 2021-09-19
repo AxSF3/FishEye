@@ -1,6 +1,7 @@
 import Gallery from './gallery.js';
 import Hero from './hero.js';
 import Dropdown from './dropdown.js';
+import Form from './form.js';
 
 export default class PhotographerPage {
  
@@ -48,16 +49,20 @@ export default class PhotographerPage {
     
         // Elément DOM main
         const photographerPageMain = document.querySelector('.photographer-page_main');
-        
+        const modals = document.querySelector('.modals');
+
         const gallery = new Gallery(relevantPhotographer, relevantMediasDefault, photographerPageMain);
-        const hero = new Hero(relevantPhotographer, photographerPageMain, relevantMediasDefault, gallery);
+        const form = new Form (relevantPhotographer, modals, photographerPageMain);
+        const hero = new Hero(relevantPhotographer, photographerPageMain, form, relevantMediasDefault, gallery);
         const dropdownMenu = new Dropdown(relevantMediasDefault, photographerPageMain, gallery);
-    
+     
+
         hero.createDomHero();
         dropdownMenu.createDropdownMenu();
         gallery.createGallery();
         gallery.createBottomBox();
         dropdownMenu.initializeDropdownMenu();
+        form.createForm();
     
         const gallerySection = document.querySelector('.gallery');
         

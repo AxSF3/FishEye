@@ -55,7 +55,15 @@ export default class Hero{
 
             tagbox.appendChild(tag);
 
+            tag.addEventListener('click', () => {
+                this.selectHeroTag(tag);           
+            });
 
+            tag.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    this.selectHeroTag(tag);          
+                }
+            });
 
             return tag;
         });
@@ -67,10 +75,12 @@ export default class Hero{
         hero.append(heroInfo, heroButton, heroImage);
         this.selector.appendChild(hero);
 
-
+        // ouverture formulaire
+        contactButton.addEventListener('click', () => {
+            let previousActiveElement;
+            this.form.launchForm(previousActiveElement);
+        });
+        
+        return contactButton;
     }
-    
-
-
-
 }
