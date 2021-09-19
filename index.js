@@ -1,3 +1,3 @@
-import PhotographerPage from './photographerPage.js';
+import HomePage from './homePage.js';
 
-PhotographerPage.init();
+HomePage.init();
