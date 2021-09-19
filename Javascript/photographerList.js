@@ -8,22 +8,20 @@ export default class PhotographerList{ // Créer une class "PhotographerList"
 
 
   getRelevantPhotographers(filterTags) {
-   
+
     if (filterTags === undefined) {
       return this.photographers;
     }
 
     let filteredPhotographersArray = [];
     filterTags.forEach(filterTag => {
-      const filteredPhotographers = this.photographers.filter((photographer) => photographer.tags.forEach(filterTag));
-      
+      const filteredPhotographers = this.photographers.filter((photographer) => photographer.tags.includes(filterTag));
       filteredPhotographersArray.push(filteredPhotographers);
-      console.log(filteredPhotographers);
+
     });
     return filteredPhotographersArray;
-    
-  }
 
+  }
   
   displayRelevantCards(selectedTags) {
     this.selector.setAttribute('tabindex', '0');
