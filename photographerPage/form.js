@@ -235,6 +235,7 @@ export default class Form {
     const emailError = document.getElementById('emailError');
     const messageError = document.getElementById('messageError');
     const errors = [firstError, lastError, emailError, messageError];
+    
 
     // regex pour validation des champs input
     const verifName = /^([A-z0-9[\]\-\'\"\/])*[^\s]\1*$/;
@@ -246,11 +247,12 @@ export default class Form {
 
       firstError.style.visibility = 'visible';
       first.style.borderColor = "#e74c3c";
-      form.classList.add("apply-shake");
+      first.classList.add("apply-shake");
+      
       
     } else {
       
-      first.textContent = '';
+      firstError.style.visibility = 'hidden';
       first.style.borderColor = "#2ecc71";
     
     }
@@ -260,11 +262,11 @@ export default class Form {
 
       lastError.style.visibility = 'visible';
       last.style.borderColor = "#e74c3c";
-      form.classList.add("apply-shake");
+      last.classList.add("apply-shake");
 
     } else {
 
-      last.textContent = '';
+      lastError.style.visibility = 'hidden';
       last.style.borderColor = "#2ecc71";
 
     }
@@ -274,24 +276,24 @@ export default class Form {
 
       emailError.style.visibility = 'visible';
       email.style.borderColor = "#e74c3c";
-      form.classList.add("apply-shake");
+      email.classList.add("apply-shake");
 
     } else {
 
-      email.textContent = '';
+      emailError.style.visibility = 'hidden';
       email.style.borderColor = "#2ecc71";
 
     }
     
     // check message
 
-    const isMessageValid = isLongEnough(message.value.length, 20) ? true : false;
+    const isMessageValid = isLongEnough(message.value.length, 20);
 
     if (isMessageValid === false) {
 
       messageError.style.visibility = 'visible';
       message.style.borderColor = "#e74c3c";
-      form.classList.add("apply-shake");
+      message.classList.add("apply-shake");
 
     } else {
       
@@ -300,7 +302,7 @@ export default class Form {
     
     }
 
-    if (first.textContent == '' && last.textContent == ''  && email.textContent == '' && isMessageValid === true ) {
+    if (firstError.style.visibility == 'hidden' && lastError.style.visibility == 'hidden'  && emailError.style.visibility == 'hidden' && isMessageValid === true ) {
       const contactContent = `Prénom : ${first.value}, Nom : ${last.value}, Message : ${message.value}`;
       console.log(contactContent);
       form.style.visibility = 'hidden';

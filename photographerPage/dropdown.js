@@ -1,9 +1,9 @@
 export default class Dropdown {
-    constructor(listMedia, selector, gallery) {
+    constructor(listMedia, selector, gallery, lightbox) {
         this.listMedia = listMedia;
         this.selector = selector;
         this.gallery = gallery;
- 
+        this.lightbox = lightbox;
     }
 
     createDropdownMenu() {
@@ -123,12 +123,13 @@ export default class Dropdown {
         return this.sortGallery(toggleContentAfterSelection);
     }
 
-    // galerie triée par défaut en fonction de la popularité
+    // galerie et lightbox triées par défaut en fonction de la popularité
     initializeDropdownMenu() {
         const dropdownToggle = document.querySelector('.dropdown-toggle');
         const toggleContent = dropdownToggle.textContent;
         const sortedRelevantMediasPopularity = this.sortRelevantMedias(toggleContent, this.listMedia);
         this.gallery.displayMediaGallery(sortedRelevantMediasPopularity);
+        this.lightbox.generateLightboxMedias(sortedRelevantMediasPopularity);
 
     }
 
@@ -165,11 +166,11 @@ export default class Dropdown {
         menuDropDown.style.display = 'none';
     }
 
-    // fonction de tri de la galerie
+    // fonction de tri de la galerie et de la lightbox en fonction de l'option choisie
     sortGallery(sortCategory) {
         const sortedRelevantMedias = this.sortRelevantMedias(sortCategory, this.listMedia);
         this.gallery.displayMediaGallery(sortedRelevantMedias); 
-  
+        this.lightbox.generateLightboxMedias(sortedRelevantMedias);
     }
 
     // fonction de tri des médias

@@ -1,7 +1,8 @@
+import Form from './form.js';
+import Lightbox from './lightbox.js';
 import Gallery from './gallery.js';
 import Hero from './hero.js';
 import Dropdown from './dropdown.js';
-import Form from './form.js';
 
 export default class PhotographerPage {
  
@@ -51,19 +52,22 @@ export default class PhotographerPage {
         const photographerPageMain = document.querySelector('.photographer-page_main');
         const modals = document.querySelector('.modals');
 
-        const gallery = new Gallery(relevantPhotographer, relevantMediasDefault, photographerPageMain);
         const form = new Form (relevantPhotographer, modals, photographerPageMain);
+        const lightbox = new Lightbox(modals, photographerPageMain);
+        const gallery = new Gallery(relevantPhotographer, relevantMediasDefault, photographerPageMain, lightbox);
         const hero = new Hero(relevantPhotographer, photographerPageMain, form, relevantMediasDefault, gallery);
-        const dropdownMenu = new Dropdown(relevantMediasDefault, photographerPageMain, gallery);
-     
-
+        const dropdownMenu = new Dropdown(relevantMediasDefault, photographerPageMain, gallery, lightbox);
+    
         hero.createDomHero();
+        form.createForm();
+        lightbox.createLightbox();
         dropdownMenu.createDropdownMenu();
         gallery.createGallery();
         gallery.createBottomBox();
         dropdownMenu.initializeDropdownMenu();
-        form.createForm();
-    
+       
+        
+
         const gallerySection = document.querySelector('.gallery');
         
         gallerySection.setAttribute('tabindex', '3');

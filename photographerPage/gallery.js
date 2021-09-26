@@ -1,11 +1,11 @@
 import MediaFactory from './mediaFactory.js';
 
 export default class Gallery{
-    constructor(photographer, listMedia, selector) {
+    constructor(photographer, listMedia, selector, lightbox) {
         this.photographer = photographer;
         this.listMedia = listMedia;
         this.selector = selector;
-   
+        this.lightbox = lightbox;
     }
 
     createGallery() {
@@ -42,12 +42,18 @@ export default class Gallery{
     
         mediaCards.forEach(mediaCard => {
 
+            const mediaCardFirstChild = mediaCard.firstChild;
+            const mediaCardId = mediaCard.getAttribute('data-media-id');
             const heartBlock = mediaCard.querySelector('.media-card_info__heart');
             const mediaHeartNumber = mediaCard.querySelector('.heart-number');
             const rating = document.querySelector('.rating');
 
             this.addOrRemoveLike(mediaHeartNumber, heartBlock, rating);
 
+            // ouverture de la lightbox affichant le média sur lequel on a cliqué
+            mediaCardFirstChild.addEventListener('click', () => {
+            this.lightbox.openLightbox(mediaCardId);
+            });
 
         });
         

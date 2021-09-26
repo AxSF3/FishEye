@@ -83,4 +83,33 @@ export default class Hero{
         
         return contactButton;
     }
+
+    selectHeroTag(tag) {
+        if (!(tag.classList.contains('active'))) {
+            const heroTags = document.querySelectorAll('.tag');
+            const heroTagContent = tag.dataset['tagName'];
+            heroTags.forEach((otherHeroTags) => otherHeroTags.classList.remove('active'));
+            tag.classList.add('active');
+            tag.setAttribute('aria-label', `médias filtrés par ${heroTagContent}`);
+            const relevantMedias = this.getRelevantMedias(heroTagContent);
+            return this.gallery.displayMediaGallery(relevantMedias);
+        } else {
+            const heroTagContent = tag.dataset['tagName'];
+            tag.classList.remove('active');
+            tag.setAttribute('aria-label', `filtre ${heroTagContent} retiré`);
+            const relevantMedias = this.getRelevantMedias();
+            return this.gallery.displayMediaGallery(relevantMedias);
+        } 
+    }
+
+    getRelevantMedias(filterTag) {
+        if (filterTag === undefined) {
+          return this.listMedia;
+        }
+        const filteredMedias = this.listMedia.filter((media) => {
+            return media.tags.includes(filterTag);
+        });
+        return filteredMedias;
+    }
+    
 }
