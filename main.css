@@ -769,3 +769,116 @@ body {
   textarea[name=message]{
     resize: none;
   }
+
+  /* lightbox */
+
+  .lightbox {
+    display: none;
+  }
+  
+  .lightbox-modal {
+    position: fixed;
+    z-index: 999;
+    color: #901C1C;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%);
+    max-width: calc(100vw - 20px);
+    height: 450px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+  }
+  @media screen and (max-width: 1015px) {
+    .lightbox-modal {
+      width: 80%;
+    }
+  }
+  .lightbox-modal .nav-left, .lightbox-modal .nav-right {
+    font-size: 42px;
+    display: flex;
+    align-items: center;
+    margin: 30px;
+  }
+  @media screen and (max-width: 670px) {
+    .lightbox-modal .nav-left, .lightbox-modal .nav-right {
+      margin: 10px;
+      font-size: 23px;
+    }
+  }
+  .lightbox-modal .lightbox-content {
+    display: flex;
+    align-items: center;
+  }
+  .lightbox-modal .media-caption {
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .lightbox-mask {
+    position: fixed;
+    z-index: 998;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .lightbox-media {
+    display: none;
+  }
+  .lightbox-media.active {
+    display: block;
+  }
+  .lightbox-media .media-content {
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
+    object-fit: contain;
+  }
+  @media screen and (max-width: 1015px) {
+    .lightbox-media .media-content {
+      width: 100%;
+    }
+  }
+  
+  .lightbox-close-btn {
+    font-size: 60px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(0.7);
+  }
+  @media screen and (max-width: 670px) {
+    .lightbox-close-btn {
+      right: -3px;
+    }
+  }
+  .lightbox-close-btn::before, .lightbox-close-btn::after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 46px;
+    width: 5px;
+    background-color: #901C1C;
+  }
+  @media screen and (max-width: 670px) {
+    .lightbox-close-btn::before, .lightbox-close-btn::after {
+      height: 40px;
+      width: 4px;
+    }
+  }
+  .lightbox-close-btn::before {
+    transform: rotate(45deg);
+  }
+  .lightbox-close-btn::after {
+    transform: rotate(-45deg);
+  }
