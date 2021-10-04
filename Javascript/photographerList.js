@@ -156,6 +156,12 @@ export default class PhotographerList{ // Créer une class "PhotographerList"
       this.selectTag(tag);
       this.getTagContent();
     });
+    tag.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        this.selectTag(tag);
+        this.getTagContent();
+      }
+    });
 
     return tag;
   }

@@ -13,7 +13,7 @@ export default class HomePage {
 
   }
   
-  /* Afficher le HTML */
+  
 
   static init() {
     const dataPromise = HomePage.getData();
