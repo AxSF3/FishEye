@@ -52,7 +52,16 @@ export default class Lightbox {
 
         // événements fermeture lightbox
         lightboxCloseBtn.addEventListener('click', this.closeLightbox.bind(this));
-
+        lightboxCloseBtn.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                this.closeLightbox();
+            }
+        });
+        window.addEventListener('keydown', (e) => {
+            if(e.key === 'Escape') {
+                this.closeLightbox();
+            }
+        });
     }
 
     generateLightboxMedias(sortedArray) {
@@ -75,9 +84,27 @@ export default class Lightbox {
         // événements - navigation
         const navLeft = document.querySelector('.nav-left');
         navLeft.addEventListener('click', () => this.previous(lightboxMedias));
+        navLeft.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                this.previous(lightboxMedias);
+            }
+        });
 
         const navRight = document.querySelector('.nav-right');
         navRight.addEventListener('click', () => this.next(lightboxMedias));
+        navRight.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                this.next(lightboxMedias);
+            }
+        });
+
+        // contrôle vidéo
+        window.addEventListener('keydown', (e) => {
+            if(e.key === ' ') {
+                const video = document.querySelector('video.media-content');
+                video.play();
+            }
+        });
 
     }
 
@@ -107,7 +134,10 @@ export default class Lightbox {
 
         // accessibilité - navigation via window
         window.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
+            if(e.key === 'Escape') {
+              this.closeLightbox();
+              previousActiveElement.focus();
+            } else if (e.key === 'ArrowLeft') {
                 this.previous(lightboxMedias);
             } else if (e.key === 'ArrowRight') {
                 this.next(lightboxMedias);

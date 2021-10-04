@@ -79,6 +79,16 @@ export default class Dropdown {
             }
         });
 
+                // navigation clavier
+                dropdown.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' && !(arrow.classList.contains('active'))) {
+                        this.openDropdownMenu();
+                        arrow.setAttribute('title', 'flèche vers le haut menu ouvert');
+                    } else if (event.key === 'Escape'){
+                        this.closeDropdownMenu();
+                        arrow.setAttribute('title', 'flèche vers le bas menu fermé');
+                    }
+                });
 
         // au clic sur une option, son contenu apparaît dans le toggle et elle disparaît de la liste
         // les autres apparaissent
@@ -89,6 +99,8 @@ export default class Dropdown {
                 this.closeDropdownMenu();
                 arrow.setAttribute('title', 'flèche vers le bas menu fermé');
             });
+
+            
 
         });
     }

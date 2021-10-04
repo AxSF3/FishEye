@@ -55,6 +55,12 @@ export default class Gallery{
             this.lightbox.openLightbox(mediaCardId);
             });
 
+            mediaCardFirstChild.addEventListener('keydown', (e) => {
+                if(e.key === 'Enter') {
+                  this.lightbox.openLightbox(mediaCardId);
+                }
+            });
+
         });
         
         return gallery;
