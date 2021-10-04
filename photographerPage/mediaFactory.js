@@ -1,18 +1,21 @@
 export default class MediaFactory {
   static createMedia(mediaData) {
-    if (mediaData.hasOwnProperty('image')) return new Image(mediaData.image, mediaData.photographerId, mediaData.price, mediaData.likes, mediaData.id);
-    else if (mediaData.hasOwnProperty('video')) return new Video(mediaData.video, mediaData.photographerId, mediaData.price, mediaData.likes, mediaData.id);
+    if (mediaData.hasOwnProperty('image')) return new Image(mediaData.image, mediaData.photographerId,/* mediaData.price,*/ mediaData.likes, mediaData.id, mediaData.desc);
+    else if (mediaData.hasOwnProperty('video')) return new Video(mediaData.video, mediaData.photographerId,/* mediaData.price,*/ mediaData.likes, mediaData.id, mediaData.desc);
   }
+
 }
-  
+
 export class Video {
-  constructor(fileName, photographerId, price, likes, id) {
+  constructor(fileName, photographerId, /*price,*/ likes, id, desc) {
     this.fileName = fileName;
     this.photographerId = photographerId;
-    this.price = price;
+    /*this.price = price;*/
     this.likes = likes;
     this.titleContent = this.fileName.slice(0, this.fileName.length-4).replaceAll('_', ' ');
     this.id = id;
+    this.desc = desc;
+
   }
 
   // Création élément DOM média de la galerie
@@ -26,11 +29,11 @@ export class Video {
     const heartNumber = document.createElement('div');
     const heart = document.createElement('i');
     const title = document.createElement('div');
-    const price = document.createElement('div');
+    /*const price = document.createElement('div');*/
     
     mediaVideo.classList.add('media-video');
     mediaVideo.setAttribute('tabindex', '0');
-    mediaVideo.setAttribute('title', `${this.titleContent}`);
+    mediaVideo.setAttribute('title', `${this.desc}`);
     mediaVideo.setAttribute('controls', 'controls');
     mediaVideo.setAttribute('muted', 'muted');
 
@@ -46,16 +49,16 @@ export class Video {
     heart.setAttribute('title', 'likes');
 
     title.classList.add('title');
-    price.classList.add('price');
+    /*price.classList.add('price');*/
 
     title.appendChild(document.createTextNode(`${this.titleContent}`));
-    price.appendChild(document.createTextNode(`${this.price}€`));
+    /*price.appendChild(document.createTextNode(`${this.price}€`));*/
     mediaVideoSrc.src = `ressources/${this.photographerId}/Resized_images/${this.fileName}`;
     heartNumber.innerHTML = this.likes;
 
     mediaVideo.appendChild(mediaVideoSrc);
     mediaCardInfo.appendChild(mediaCardInfoText);
-    mediaCardInfoText.append(title, price);
+    mediaCardInfoText.append(title/*, price*/);
     mediaCardInfoHeart.append(heartNumber,heart);
     mediaCardInfo.appendChild(mediaCardInfoHeart);
 
@@ -94,13 +97,16 @@ export class Video {
 
 
 export class Image {
-  constructor(fileName, photographerId, price, likes, id) {
+  constructor(fileName, photographerId, /*price,*/ likes, id, desc) {
+  
     this.fileName = fileName;
     this.photographerId = photographerId;
-    this.price = price;
+    /*this.price = price;*/
     this.likes = likes;
     this.titleContent = this.fileName.slice(0, this.fileName.length-4).replaceAll('_', ' ');
     this.id = id;
+    this.desc = desc;
+    
   }
 
   // Création élément DOM média de la galerie
@@ -113,10 +119,10 @@ export class Image {
     const heartNumber = document.createElement('div');
     const heart = document.createElement('i');
     const title = document.createElement('div');
-    const price = document.createElement('div');
+    /*const price = document.createElement('div');*/
 
     mediaImage.setAttribute('tabindex', '0');
-    mediaImage.setAttribute('alt', `${this.titleContent}`);
+    mediaImage.setAttribute('alt', `${this.desc}`);
 
     mediaCardInfo.classList.add('media-card_info');
     mediaCardInfoText.classList.add('media-card_info__text');
@@ -130,16 +136,16 @@ export class Image {
     heart.setAttribute('title', 'likes');
 
     title.classList.add('title');
-    price.classList.add('price');
+    /*price.classList.add('price');*/
 
     title.appendChild(document.createTextNode(`${this.titleContent}`));
-    price.appendChild(document.createTextNode(`${this.price}€`));
+   /* price.appendChild(document.createTextNode(`${this.price}€`));*/
 
     mediaImage.src = `ressources/${this.photographerId}/Resized_images/${this.fileName}`;
     heartNumber.innerHTML = this.likes;
 
     mediaCardInfo.appendChild(mediaCardInfoText);
-    mediaCardInfoText.append(title, price);
+    mediaCardInfoText.append(title/*, price*/);
     mediaCardInfoHeart.append(heartNumber, heart);
     mediaCardInfo.appendChild(mediaCardInfoHeart);
 

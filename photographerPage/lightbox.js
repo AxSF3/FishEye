@@ -91,17 +91,26 @@ export default class Lightbox {
         let previousActiveElement = document.activeElement;
         const lightbox = document.querySelector('.lightbox');
         const lightboxMask = document.querySelector('.lightbox-mask');
-        const header = document.querySelector('header');
+        /*const header = document.querySelector('header');*/
         lightbox.style.display = 'block';
         lightbox.setAttribute('aria-hidden', 'false');
-        this.app.style.display = 'none';
-        header.style.display = 'none';
+        /*this.app.style.display = 'none';
+        header.style.display = 'none';*/
 
         const lightboxMedias = document.querySelectorAll('.lightbox-media');
         // affichage du média lightbox qui correspond à la miniature sélectionnée dans la galerie
         lightboxMedias.forEach(lightboxMedia => {
             if(mediaId.toString() === lightboxMedia.dataset['mediaId']){
             lightboxMedia.classList.add('active');
+            }
+        });
+
+        // accessibilité - navigation via window
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                this.previous(lightboxMedias);
+            } else if (e.key === 'ArrowRight') {
+                this.next(lightboxMedias);
             }
         });
 
