@@ -67,11 +67,11 @@ export default class PhotographerPage {
         dropdownMenu.initializeDropdownMenu();
        
         
-
+/*
         const gallerySection = document.querySelector('.gallery');
         
         gallerySection.setAttribute('tabindex', '3');
-        gallerySection.setAttribute('role', 'tab');
+        gallerySection.setAttribute('role', 'tab');*/
       });
       
     };

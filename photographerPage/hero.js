@@ -22,7 +22,7 @@ export default class Hero{
   
         hero.classList.add('hero');
         hero.setAttribute('role', 'region');
-        hero.setAttribute('tabindex', '1');
+        /*hero.setAttribute('tabindex', '1');*/
         hero.setAttribute('aria-label', `info photographe ${this.photographer.name}`);
         heroInfo.classList.add('info');
         heroButton.classList.add('hero-button');
@@ -37,6 +37,7 @@ export default class Hero{
         contactButton.classList.add('btn-contact');
         contactButton.type = 'button';
         contactButton.value = 'Contactez-moi';
+        contactButton.setAttribute('alt', 'Contactez-moi');
 
         portrait.src = `ressources/profil/${this.photographer.portrait}`;
         name.appendChild(document.createTextNode(this.photographer.name));

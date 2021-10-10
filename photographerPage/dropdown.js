@@ -27,12 +27,13 @@ export default class Dropdown {
 
         dropdown.classList.add('dropdown');
         dropdown.setAttribute('aria-labelledby', 'orderby');
-        dropdown.setAttribute('tabindex', '2');
+        /*dropdown.setAttribute('tabindex', '2');*/
 
         dropdownToggle.classList.add('dropdown-toggle');
         dropdownToggle.setAttribute('aria-haspopup', 'listbox');
         dropdownToggle.setAttribute('aria-expanded', 'false');
         dropdownToggle.setAttribute('role', 'button');
+        dropdownToggle.setAttribute('alt', "Menu déroulant");
 
         arrow.classList.add('arrow');
         arrow.setAttribute('aria-label', 'flèche vers le bas menu fermé');
@@ -79,16 +80,21 @@ export default class Dropdown {
             }
         });
 
-                // navigation clavier
-                dropdown.addEventListener('keydown', (event) => {
-                    if (event.key === 'Enter' && !(arrow.classList.contains('active'))) {
-                        this.openDropdownMenu();
-                        arrow.setAttribute('title', 'flèche vers le haut menu ouvert');
-                    } else if (event.key === 'Escape'){
-                        this.closeDropdownMenu();
-                        arrow.setAttribute('title', 'flèche vers le bas menu fermé');
-                    }
-                });
+        // navigation clavier
+        dropdown.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' && !(arrow.classList.contains('active'))) {
+                this.openDropdownMenu();
+                arrow.setAttribute('title', 'flèche vers le haut menu ouvert');
+            } else if (event.key === 'Escape'){
+                this.closeDropdownMenu();
+                arrow.setAttribute('title', 'flèche vers le bas menu fermé');
+            }
+        });
+
+        
+
+        
+
 
         // au clic sur une option, son contenu apparaît dans le toggle et elle disparaît de la liste
         // les autres apparaissent
@@ -104,19 +110,6 @@ export default class Dropdown {
 
         });
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -176,20 +169,27 @@ export default class Dropdown {
         dropdownToggle.setAttribute('aria-expanded', 'false');
         arrow.classList.remove('active');
         menuDropDown.style.display = 'none';
+
     }
 
     // fonction de tri de la galerie et de la lightbox en fonction de l'option choisie
     sortGallery(sortCategory) {
         const sortedRelevantMedias = this.sortRelevantMedias(sortCategory, this.listMedia);
+        
         this.gallery.displayMediaGallery(sortedRelevantMedias); 
         this.lightbox.generateLightboxMedias(sortedRelevantMedias);
+
     }
+
+
 
     // fonction de tri des médias
     sortRelevantMedias(dropdownContent, relevantMediasArray) {
         if (dropdownContent === 'Popularité') {
           return relevantMediasArray.sort(function (a, b) {
             return b.likes - a.likes;
+            
+
           });
         } else if (dropdownContent === 'Date') {
             return relevantMediasArray.sort(function (a, b) {
@@ -207,8 +207,20 @@ export default class Dropdown {
                 }
                 return 0; 
             });
-        }
+
+            
+        } 
+
+        
+        
     }
+
+
+
+
+
+
+    
 
     
 }

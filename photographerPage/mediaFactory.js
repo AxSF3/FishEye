@@ -167,7 +167,7 @@ export class Image {
       mediaCaption.classList.add('media-caption');
       mediaCaption.setAttribute('tabindex', '0');
   
-      mediaContent.setAttribute('alt', `${this.titleContent}`);
+      mediaContent.setAttribute('alt', `${this.desc}`);
       mediaContent.src = `ressources/${this.photographerId}/Resized_images/${this.fileName}`;
       mediaCaption.appendChild(document.createTextNode(`${this.titleContent}`));
       lightboxMedia.append(mediaContent, mediaCaption);

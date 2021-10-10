@@ -51,6 +51,7 @@ export default class Form {
 
     close.classList.add('close');
     close.setAttribute('aria-label', 'icône croix fermer modale');
+    close.setAttribute('alt', 'icône croix fermer modale');
     close.setAttribute('tabindex', '0');
     close.setAttribute('role', 'button');
 
@@ -315,19 +316,19 @@ export default class Form {
 
 // ENLEVER LA CLASSE POUR QUE L'ANIMATION FONCTIONNE A L'INFINI
 
-first.addEventListener("animationend", (e) => {
+first.addEventListener("animationend", () => {
   first.classList.remove("apply-shake");
 });
 
-last.addEventListener("animationend", (e) => {
+last.addEventListener("animationend", () => {
   last.classList.remove("apply-shake");
 });
 
-email.addEventListener("animationend", (e) => {
+email.addEventListener("animationend", () => {
   email.classList.remove("apply-shake");
 });
 
-message.addEventListener("animationend", (e) => {
+message.addEventListener("animationend", () => {
   message.classList.remove("apply-shake");
 });
 
