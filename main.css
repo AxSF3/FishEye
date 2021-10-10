@@ -2,7 +2,7 @@ body {
     font-family: "DM Sans", sans-serif;
     font-weight: normal;
     font-style: normal;
-    width: 90%;
+    width: 1240px;
     margin: auto;
     position: relative;
   }
@@ -334,6 +334,7 @@ body {
   .logo {
     width: 30%;
     display: flex;
+    margin-left: 110px;
   }
   .logo img {
     width: 150px;
@@ -350,7 +351,7 @@ body {
   }
   @media screen and (max-width: 380px) {
     .logo img {
-      width: 100%;
+     
     }
   }
   
@@ -379,6 +380,7 @@ body {
   .header-photographer-page {
     width: 100%;
     margin: 20px 0;
+    margin-left: -110px;
   }
   .header-photographer-page img {
     width: 150px;
@@ -390,7 +392,7 @@ body {
   
   .nos-photographes {
     font-weight: normal;
-    font-size: 28px;
+    font-size: 22px;
     line-height: 47px;
     color: #901C1C;
     text-align: right;
@@ -399,6 +401,7 @@ body {
     align-items: center;
     justify-content: flex-end;
     margin: 0 10px 0 0;
+    margin-right: 125px;
   }
   @media screen and (max-width: 1015px) {
     .nos-photographes {
