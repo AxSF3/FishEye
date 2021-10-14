@@ -57,7 +57,25 @@ export default class PhotographerPage {
         const gallery = new Gallery(relevantPhotographer, relevantMediasDefault, photographerPageMain, lightbox);
         const hero = new Hero(relevantPhotographer, photographerPageMain, form, relevantMediasDefault, gallery);
         const dropdownMenu = new Dropdown(relevantMediasDefault, photographerPageMain, gallery, lightbox);
-    
+        
+        // Récupère éléments nécessaire pour dropdown + tags
+        
+        const tagElement = hero.createDomHero.hero;
+
+        console.log(tagElement);
+
+        const functionDropDown = dropdownMenu.sortGallery;
+
+        console.log(functionDropDown)
+        
+        if(functionDropDown) {
+
+          
+
+        }
+
+      
+
         hero.createDomHero();
         form.createForm();
         lightbox.createLightbox();
@@ -65,7 +83,7 @@ export default class PhotographerPage {
         gallery.createGallery();
         gallery.createBottomBox();
         dropdownMenu.initializeDropdownMenu();
-       
+
         
 /*
         const gallerySection = document.querySelector('.gallery');
