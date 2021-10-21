@@ -2,7 +2,8 @@ body {
     font-family: "DM Sans", sans-serif;
     font-weight: normal;
     font-style: normal;
-    width: 1240px;
+    width: 100%;
+    max-width: 1200px;
     margin: auto;
     position: relative;
     overflow-x: hidden;
@@ -334,6 +335,7 @@ body {
       height: auto;
       margin-top: 10px;
     }
+
   }
   
   .logo {
@@ -351,17 +353,12 @@ body {
   }
   @media screen and (max-width: 670px) {
     .logo img {
-      margin: 25PX 0 30PX 10PX;
-    }
-  }
-  @media screen and (max-width: 380px) {
-    .logo img {
-     
+      margin: 25PX 0 30PX -100PX;
     }
   }
   
   nav {
-    width: 65%;
+    width: 75%;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -422,10 +419,14 @@ body {
   }
   @media screen and (max-width: 380px) {
     .nos-photographes {
-      height: 90px;
+      
       margin-bottom: 70px;
-      font-size: 16px;
+      font-size: 12px;
+      
     }
+
+
+
   }
 
   #section-homepage {
@@ -441,11 +442,20 @@ body {
     #section-homepage .card {
       width: 50%;
     }
+
   }
   @media screen and (max-width: 670px) {
     #section-homepage .card {
       width: 100%;
     }
+  }
+
+  @media screen and (max-width: 928px) {
+
+    .nos-photographes {
+      margin-right: 50px;
+    }
+
   }
   
   /* PAGES PHOTOGRAPHES */
