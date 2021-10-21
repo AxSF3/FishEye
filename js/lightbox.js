@@ -62,6 +62,7 @@ export default class Lightbox {
                 this.closeLightbox();
             }
         });
+
     }
 
     generateLightboxMedias(sortedArray) {
@@ -89,7 +90,7 @@ export default class Lightbox {
                 this.previous(lightboxMedias);
             }
         });
-
+/*
         const navRight = document.querySelector('.nav-right');
         navRight.addEventListener('click', () => this.next(lightboxMedias));
         navRight.addEventListener('keypress', (event) => {
@@ -97,7 +98,7 @@ export default class Lightbox {
                 this.next(lightboxMedias);
             }
         });
-
+*/
         // contrôle vidéo
         window.addEventListener('keydown', (e) => {
             if(e.key === ' ') {
@@ -112,17 +113,17 @@ export default class Lightbox {
         const lightboxMedia = MediaFactory.createMedia(mediaData).createLightboxDom();
         lightboxMedia.classList.add('lightbox-media');
         return lightboxMedia;
+
+        
     }
 
     openLightbox(mediaId) {
         let previousActiveElement = document.activeElement;
         const lightbox = document.querySelector('.lightbox');
         const lightboxMask = document.querySelector('.lightbox-mask');
-        /*const header = document.querySelector('header');*/
         lightbox.style.display = 'block';
         lightbox.setAttribute('aria-hidden', 'false');
-        /*this.app.style.display = 'none';
-        header.style.display = 'none';*/
+        
 
         const lightboxMedias = document.querySelectorAll('.lightbox-media');
         // affichage du média lightbox qui correspond à la miniature sélectionnée dans la galerie
@@ -147,10 +148,6 @@ export default class Lightbox {
             }
 
             e.stopImmediatePropagation();
-
-            
-            
-        
 
         });
 
@@ -185,10 +182,19 @@ export default class Lightbox {
         });
     }
 
+
+
+
+
+
+
+
+/*
     next(mediaArray) {
         const video = document.querySelector('video.media-content');
         const navRight = document.querySelector('.nav-right');
         const navLeft = document.querySelector('.nav-left');
+
 
         for(let i = 0; i < mediaArray.length-1; i++) {
             if(mediaArray[i].classList.contains('active')) {
@@ -216,7 +222,12 @@ export default class Lightbox {
         if(navLeft.style.visibility === 'hidden') {
             navLeft.style.visibility = 'visible';
         }
-    }
+    }*/
+
+
+
+
+/*
 
     previous(mediaArray) {
         const video = document.querySelector('video.media-content');
@@ -249,5 +260,5 @@ export default class Lightbox {
         if(navRight.style.visibility === 'hidden') {
             navRight.style.visibility = 'visible';
         }
-    }
+    }*/
 }

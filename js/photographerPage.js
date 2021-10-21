@@ -59,18 +59,24 @@ export default class PhotographerPage {
         const dropdownMenu = new Dropdown(relevantMediasDefault, photographerPageMain, gallery, lightbox);
         
         // Récupère éléments nécessaire pour dropdown + tags
-        
+        /*
         const tagElement = document.getElementsByClassName('tag');
         
         const activeElement = document.getElementsByClassName('active');
 
         const optionsElement = dropdownMenu.createDropdownMenu;
 
+        const test = lightbox.openLightbox;
+        const test1 = hero.getRelevantMedias;
+
+
+
+
         console.log(tagElement);
         console.log(activeElement);
         console.log(optionsElement);
 
-        
+        */
 
       
 

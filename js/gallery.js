@@ -53,6 +53,39 @@ export default class Gallery{
             // ouverture de la lightbox affichant le média sur lequel on a cliqué
             mediaCardFirstChild.addEventListener('click', () => {
             this.lightbox.openLightbox(mediaCardId);
+            console.log(mediaCardId)
+
+            const medias = ['5234343', '623534343', '625025343', '23523434', '2523434634', '95234343', 
+            '398847109', '65235234', '2525345343', '2534342'];
+
+            /*media_id = mediaCardId;*/
+            
+            renderMedia(mediaCardId);
+            
+             
+            function next() {
+                let activeIndex = medias.indexOf(mediaCardId)
+                activeIndex += 1
+                if (activeIndex >= medias.length) {
+                 activeIndex = 0
+                }
+                mediaCardId = medias[activeIndex]
+              
+                renderMedia(mediaCardId)
+              }
+
+              
+            
+            function renderMedia(mediaCardId) {
+              
+                document.querySelectorAll('img.active').classList.remove('active');
+                document.querySelector('img[mediaId='+mediaCardId+']').classList.add('active')
+            
+            }
+
+            
+
+
             });
 
             mediaCardFirstChild.addEventListener('keydown', (e) => {
