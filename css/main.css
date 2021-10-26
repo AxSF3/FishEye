@@ -342,6 +342,7 @@ body {
     width: 30%;
     display: flex;
     margin-left: 110px;
+    
   }
   .logo img {
     width: 150px;
@@ -353,7 +354,11 @@ body {
   }
   @media screen and (max-width: 670px) {
     .logo img {
-      margin: 25PX 0 30PX -100PX;
+      margin: 25PX 0 30PX 0PX;
+    }
+
+    .logo img[alt="Logo FishEye"] {
+      margin-left: -100px;
     }
   }
   
