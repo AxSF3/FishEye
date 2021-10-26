@@ -52,7 +52,8 @@ export default class Gallery{
 
             // ouverture de la lightbox affichant le média sur lequel on a cliqué
             mediaCardFirstChild.addEventListener('click', () => {
-            this.lightbox.openLightbox(mediaCardId);
+            /*this.lightbox.createLightboxMedias(mediaArray);*/
+            this.lightbox.openLightbox(mediaCardId, mediaArray);
             console.log(mediaCardId)
 
             const medias = ['5234343', '623534343', '625025343', '23523434', '2523434634', '95234343', 
@@ -78,9 +79,16 @@ export default class Gallery{
             
             function renderMedia(mediaCardId) {
               
-                document.querySelectorAll('img.active').classList.remove('active');
-                document.querySelector('img[mediaId='+mediaCardId+']').classList.add('active')
+
+                var activeElement =  document.querySelector('img.active');
+                document.querySelector('img[mediaCardId='+mediaCardId+']').classList.add('active')
             
+                if(activeElement) {
+                    document.querySelector('img.active').classList.remove('active');  
+                } else {
+                    
+                }
+
             }
 
             
