@@ -63,6 +63,8 @@ export default class Lightbox {
             }
         });
 
+
+        
     }
 
     generateLightboxMedias(sortedArray) {
@@ -99,6 +101,9 @@ export default class Lightbox {
             }
         });
 */
+
+
+
         // contrôle vidéo
         window.addEventListener('keydown', (e) => {
             if(e.key === ' ') {
@@ -131,10 +136,12 @@ export default class Lightbox {
             if(mediaId.toString() === lightboxMedia.dataset['mediaId']){
             lightboxMedia.classList.add('active');
             }
+
         });
 
+        
         // accessibilité - navigation via window
-
+/*
         window.addEventListener('keydown', (e) => {
             
                 
@@ -151,7 +158,7 @@ export default class Lightbox {
 
         });
 
-        
+        */
 
         // événements - fermeture lightbox au clic
         lightboxMask.addEventListener('click', () => {

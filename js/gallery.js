@@ -81,18 +81,15 @@ export default class Gallery{
               
 
                 var activeElement =  document.querySelector('img.active');
-                document.querySelector('img[mediaCardId='+mediaCardId+']').classList.add('active')
             
                 if(activeElement) {
-                    document.querySelector('img.active').classList.remove('active');  
+                    document.querySelector('img.active').classList.remove('active');
+                    document.querySelector('img[mediaCardId='+mediaCardId+']').classList.add('active')  
                 } else {
                     
                 }
 
             }
-
-            
-
 
             });
 
@@ -102,9 +99,12 @@ export default class Gallery{
                 }
             });
 
+            
+
         });
         
         return gallery;
+        
     }
 
     // ajout/suppression de like
@@ -170,4 +170,6 @@ export default class Gallery{
 
         return bottomBox;
     }
+
+    
 }

@@ -59,11 +59,7 @@ export default class Hero{
             tag.addEventListener('click', () => {
                 this.selectHeroTag(tag);           
             });
-/*
-            const test = tag.addEventListener('click', () => {
-                this.selectHeroTag(tag);           
-            });
-*/
+
             tag.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter') {
                     this.selectHeroTag(tag);          
