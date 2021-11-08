@@ -141,14 +141,12 @@ export default class Lightbox {
             
             }
 
-            if (lightboxMedia) {
+            
 
                 lightboxMedia.parentNode.removeChild(lightboxMedia);
                 
                 /*lightboxMedia.parentNode.appendChild(mediaArray);*/
-                
-
-            }
+            
 
             
 
