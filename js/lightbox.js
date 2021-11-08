@@ -92,15 +92,15 @@ export default class Lightbox {
                 this.previous(lightboxMedias);
             }
         });
-/*
+
         const navRight = document.querySelector('.nav-right');
-        navRight.addEventListener('click', () => this.next(lightboxMedias));
+        navRight.addEventListener('click', () => this.next(sortedArray));
         navRight.addEventListener('keypress', (event) => {
             if (event.key === 'Enter') {
-                this.next(lightboxMedias);
+                this.next(sortedArray);
             }
         });
-*/
+
 
 
 
@@ -122,22 +122,48 @@ export default class Lightbox {
         
     }
 
-    openLightbox(mediaId) {
+    openLightbox(mediaId, mediaArray) {
         let previousActiveElement = document.activeElement;
         const lightbox = document.querySelector('.lightbox');
         const lightboxMask = document.querySelector('.lightbox-mask');
         lightbox.style.display = 'block';
         lightbox.setAttribute('aria-hidden', 'false');
         
+        
+
 
         const lightboxMedias = document.querySelectorAll('.lightbox-media');
+        
         // affichage du média lightbox qui correspond à la miniature sélectionnée dans la galerie
         lightboxMedias.forEach(lightboxMedia => {
             if(mediaId.toString() === lightboxMedia.dataset['mediaId']){
             lightboxMedia.classList.add('active');
+            
             }
 
+            if (lightboxMedia) {
+
+                lightboxMedia.parentNode.removeChild(lightboxMedia);
+                
+                /*lightboxMedia.parentNode.appendChild(mediaArray);*/
+                
+
+            }
+
+            
+
         });
+
+
+       
+
+
+
+
+
+
+
+        
 
         
         // accessibilité - navigation via window
@@ -192,6 +218,20 @@ export default class Lightbox {
 
 
 
+    next(medias, mediaCardId) {
+
+        
+
+
+        let activeIndex = medias.indexOf(mediaCardId)
+        activeIndex += 1
+        if (activeIndex >= medias.length) {
+            activeIndex = 0
+        }
+         mediaCardId = medias[activeIndex]
+              
+        renderMedia(mediaCardId)
+        }
 
 
 

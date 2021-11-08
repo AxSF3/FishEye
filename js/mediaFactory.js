@@ -1,7 +1,11 @@
 export default class MediaFactory {
   static createMedia(mediaData) {
+   
     if (mediaData.hasOwnProperty('image')) return new Image(mediaData.image, mediaData.photographerId,/* mediaData.price,*/ mediaData.likes, mediaData.id, mediaData.desc);
     else if (mediaData.hasOwnProperty('video')) return new Video(mediaData.video, mediaData.photographerId,/* mediaData.price,*/ mediaData.likes, mediaData.id, mediaData.desc);
+    else {
+      console.log(mediaData);
+    }
   }
 
 }
