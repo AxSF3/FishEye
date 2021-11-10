@@ -800,13 +800,28 @@ body {
     resize: none;
   }
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   /* lightbox */
+
+
+
+
 
   .lightbox {
     display: none;
   }
   
-  .lightbox-modal {
+  /*.lightbox-modal*/
+  #lightbox {
     position: fixed;
     z-index: 999;
     color: #901C1C;
@@ -822,27 +837,27 @@ body {
     background-color: white;
   }
   @media screen and (max-width: 1015px) {
-    .lightbox-modal {
+    #lightbox {
       width: 80%;
     }
   }
-  .lightbox-modal .nav-left, .lightbox-modal .nav-right {
+  #lightbox #lightbox-previous, #lightbox #lightbox-next {
     font-size: 42px;
     display: flex;
     align-items: center;
     margin: 30px;
   }
   @media screen and (max-width: 670px) {
-    .lightbox-modal .nav-left, .lightbox-modal .nav-right {
+    .lightbox-modal #lightbox-previous, .lightbox-modal #lightbox-next {
       margin: 10px;
       font-size: 23px;
     }
   }
-  .lightbox-modal .lightbox-content {
+  #lightbox #lightbox-content {
     display: flex;
     align-items: center;
   }
-  .lightbox-modal .media-caption {
+  #lightbox .media-caption {
     text-align: center;
     font-size: 14px;
   }
@@ -876,7 +891,7 @@ body {
     }
   }
   
-  .lightbox-close-btn {
+  #lightbox-close-btn {
     font-size: 60px;
     font-weight: bold;
     position: absolute;
@@ -888,11 +903,11 @@ body {
     transform: scale(0.7);
   }
   @media screen and (max-width: 670px) {
-    .lightbox-close-btn {
+    #lightbox-close-btn {
       right: -3px;
     }
   }
-  .lightbox-close-btn::before, .lightbox-close-btn::after {
+  #lightbox-close-btn::before, #lightbox-close-btn::after {
     position: absolute;
     left: 15px;
     content: " ";
@@ -901,14 +916,38 @@ body {
     background-color: #901C1C;
   }
   @media screen and (max-width: 670px) {
-    .lightbox-close-btn::before, .lightbox-close-btn::after {
+    #lightbox-close-btn::before, #lightbox-close-btn::after {
       height: 40px;
       width: 4px;
     }
   }
-  .lightbox-close-btn::before {
+  #lightbox-close-btn::before {
     transform: rotate(45deg);
   }
-  .lightbox-close-btn::after {
+  #lightbox-close-btn::after {
     transform: rotate(-45deg);
   }
+
+
+
+
+
+
+
+/*
+  #lightbox {
+    display: none;
+  }
+  
+  #lightbox.open {
+    display: block;
+  }
+  
+  #lightbox-content img {
+    display: none;
+  }
+  
+  
+  #lightbox-content img.active {
+    display: block;
+  }*/
