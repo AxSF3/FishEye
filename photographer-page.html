@@ -19,7 +19,65 @@
         <main class="photographer-page_main"></main>
 
         <div class="modals"></div>
+<!--lightbox-modal-->
+        <div id="lightbox" aria-label="lightbox" tabindex="0">
+            
+            <span id="lightbox-close-btn" tabindex="0" aria-label="icône croix fermer lightbox"></span>
+            <!--nav-left-->
+            <i id="lightbox-previous" class="fas fa-chevron-left" aria-label="flèche vers la gauche image précédente" role="button" tabindex="0"></i>
+           
+            <div id="lightbox-content" tabindex="0" aria-label="naviguer avec flèches du clavier">
+                
+                <div id="lightbox-content-media">
+                    
+                    <figure class="lightbox-media" data-media-id="5234343">
+                    <video class="media-content" controls="controls">
+                    <source src="resources/243/Resized_images/Animals_Wild_Horses_in_the_mountains.mp4"></video>
+                    <figcaption class="media-caption" tabindex="0">Animals Wild Horses in the mountains</figcaption></figure>
+                    <figure class="lightbox-media active" data-media-id="623534343">
+                        <img class="media-content" alt="Vue sur le haut d'une montagne" src="resources/243/Resized_images/Travel_Lonesome.jpg">
+                        <figcaption class="media-caption" tabindex="0">Travel Lonesome</figcaption></figure><figure class="lightbox-media" data-media-id="625025343">
+                        <img class="media-content" alt="Petit village sur une colline" src="resources/243/Resized_images/Travel_HillsideColor.jpg">
+                        <figcaption class="media-caption" tabindex="0">Travel HillsideColor</figcaption></figure><figure class="lightbox-media" data-media-id="23523434">
+                        <img class="media-content" alt="Une femme et un homme venant de se marier et sur le point de s'embrasser" src="resources/243/Resized_images/Event_BenevidesWedding.jpg">
+                        <figcaption class="media-caption" tabindex="0">Event BenevidesWedding</figcaption></figure><figure class="lightbox-media" data-media-id="2523434634"><img class="media-content" alt="Portrait d'une femme noire avec des lunettes" src="resources/243/Resized_images/Portrait_Nora.jpg">
+                        <figcaption class="media-caption" tabindex="0">Portrait Nora</figcaption></figure><figure class="lightbox-media" data-media-id="95234343"><img class="media-content" alt="Un oiseau arc-en-ciel" src="resources/243/Resized_images/Animals_Rainbow.jpg">
+                        <figcaption class="media-caption" tabindex="0">Animals Rainbow</figcaption></figure><figure class="lightbox-media" data-media-id="398847109"><img class="media-content" alt="Portrait en noir et blanc d'une femme relevant un peu le cou" src="resources/243/Resized_images/Portrait_Background.jpg"><figcaption class="media-caption" tabindex="0">Portrait Background</figcaption></figure>
+                        <figure class="lightbox-media" data-media-id="65235234"><img class="media-content" alt="Une femme et un homme venant de se marier sous un rocher" src="resources/243/Resized_images/Event_PintoWedding.jpg">
+                        <figcaption class="media-caption" tabindex="0">Event PintoWedding</figcaption></figure><figure class="lightbox-media" data-media-id="2525345343"><img class="media-content" alt="Un enfant faisant une grimace" src="resources/243/Resized_images/Portrait_Wednesday.jpg">
+                        <figcaption class="media-caption" tabindex="0">Portrait Wednesday</figcaption></figure><figure class="lightbox-media" data-media-id="2534342"><img class="media-content" alt="Des tables et des chaises d'un restaurant à l'exterieur" src="resources/243/Resized_images/Event_SeasideWedding.jpg">
+                        <figcaption class="media-caption" tabindex="0">Event SeasideWedding</figcaption></figure>
+                    
+                </div>
+                
+            </div>
+          <!--nav-right-->      
+        <i id="lightbox-next" class="fas fa-chevron-right" aria-label="flèche vers la droite image suivante" tabindex="0"></i>
+                    
+        </div>
         
+
+                        <div class="lightbox" role="dialog" aria-label="image agrandie lightbox" aria-hidden="true" aria-modal="true" tabindex="0">
+                            <div id="lightbox" aria-label="lightbox" tabindex="0">
+
+                                <span id="lightbox-close" tabindex="0" aria-label="icône croix fermer lightbox"></span>
+                                <i id="nav-left fas fa-chevron-left" aria-label="flèche vers la gauche image précédente" role="button" tabindex="0"></i>    
+                                <div id="lightbox-content" tabindex="0" aria-label="naviguer avec flèches du clavier"></div>
+                                <i id="nav-right fas fa-chevron-right" aria-label="flèche vers la droite image suivante" tabindex="0"></i>
+                            
+                            </div>
+                            
+                            <div class="lightbox-mask"></div>
+                        
+                        </div>
+
+
+
+
+
+
+
+
         <script type="module" src="js/index2.js"></script>
 
     </body>
