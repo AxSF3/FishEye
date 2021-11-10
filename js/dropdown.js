@@ -139,7 +139,7 @@ export default class Dropdown {
         const toggleContent = dropdownToggle.textContent;
         const sortedRelevantMediasPopularity = this.sortRelevantMedias(toggleContent, this.listMedia);
         this.gallery.displayMediaGallery(sortedRelevantMediasPopularity);
-        this.lightbox.generateLightboxMedias(sortedRelevantMediasPopularity);
+        /*this.lightbox.generateLightboxMedias(sortedRelevantMediasPopularity);*/
 
     }
 

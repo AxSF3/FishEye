@@ -53,10 +53,10 @@ export default class PhotographerPage {
         const modals = document.querySelector('.modals');
 
         const form = new Form (relevantPhotographer, modals, photographerPageMain);
-        const lightbox = new Lightbox(modals, photographerPageMain);
-        const gallery = new Gallery(relevantPhotographer, relevantMediasDefault, photographerPageMain, lightbox);
+        new Lightbox();
+        const gallery = new Gallery(relevantPhotographer, relevantMediasDefault, photographerPageMain/*, lightbox*/);
         const hero = new Hero(relevantPhotographer, photographerPageMain, form, relevantMediasDefault, gallery);
-        const dropdownMenu = new Dropdown(relevantMediasDefault, photographerPageMain, gallery, lightbox);
+        const dropdownMenu = new Dropdown(relevantMediasDefault, photographerPageMain, gallery/*, lightbox*/);
         
         // Récupère éléments nécessaire pour dropdown + tags
         /*
@@ -82,7 +82,7 @@ export default class PhotographerPage {
 
         hero.createDomHero();
         form.createForm();
-        lightbox.createLightbox();
+    
         dropdownMenu.createDropdownMenu();
         gallery.createGallery();
         gallery.createBottomBox();

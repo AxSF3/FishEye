@@ -1,4 +1,216 @@
-import MediaFactory from './mediaFactory.js';
+
+
+export default class Lightbox {
+    constructor(medias, currentMedia) {
+      this.element = document.getElementById('lightbox');
+      this.content = document.getElementById('lightbox-content');
+      this.next = this.next.bind(this);
+      this.previous = this.previous.bind(this);
+      this.close = this.close.bind(this);
+      this.medias = medias;
+      this.currentMedia = currentMedia;
+      this.createMedias();
+      this.element.classList.add('open');
+      this.registerEvents();
+    }
+
+    
+    
+    createMedias() {
+     
+      this.content.innerHtml = '';
+      
+      this.medias.forEach((media) => {
+        const mediaDom = document.createElement('img');
+        mediaDom.src = media.url;
+        if (media.id === this.currentMedia) {
+          mediaDom.classList.add('active');
+        }
+        this.content.appendChild(mediaDom);
+      });
+    }
+
+
+    
+    close() {
+      //Supprimer les événements tous les événements avec removeEventListener
+      this.element.classList.remove('open');
+      this.element.querySelector('#lightbox-next').removeEventListener('click', this.next);
+      this.element.querySelector('#lightbox-previous').removeEventListener('click', this.previous);
+      this.element.querySelector('#lightbox-close').removeEventListener('click', this.close);
+      console.log('juste ici')
+    }
+    
+    registerEvents() {
+      this.element.querySelector('#lightbox-next').addEventListener('click', this.next);
+      this.element.querySelector('#lightbox-previous').addEventListener('click', this.previous);
+      this.element.querySelector('#lightbox-close').addEventListener('click', this.close);
+    }
+    
+    next() {
+      console.log('ici')
+      let currentElement = this.content.querySelector('img.active');
+      currentElement.classList.remove('active');
+      if (currentElement.nextSibling === null) {
+        currentElement = this.content.querySelector('img:first-child');
+      } else {
+        currentElement = currentElement.nextSibling;
+      }
+      currentElement.classList.add('active');
+    }
+    
+    previous() {
+      let currentElement = this.content.querySelector('img.active');
+      currentElement.classList.remove('active');
+      if (currentElement.previousSibling === null) {
+        currentElement = this.content.querySelector('img:last-child');
+      } else {
+        currentElement = currentElement.previousSibling;
+      }
+      currentElement.classList.add('active');
+    }
+  }
+ 
+  document.querySelector('#lightbox').addEventListener('click', () => {
+    
+    new Lightbox(
+      [
+        {
+          id: 5234343,
+          url: "resources/243/Resized_images/Animals_Wild_Horses_in_the_mountains.mp4"
+          
+        },
+        {
+          id: 623534343,
+          url: "resources/243/Resized_images/Travel_Lonesome.jpg"
+        },
+        {
+          id: 625025343,
+          url: "resources/243/Resized_images/Travel_HillsideColor.jpg"
+        },
+        {
+          id: 23523434,
+          url: "resources/243/Resized_images/Event_BenevidesWedding.jpg"
+        },
+        {
+          id: 2523434634,
+          url: "resources/243/Resized_images/Portrait_Nora.jpg"
+        },
+        {
+          id: 95234343,
+          url: "resources/243/Resized_images/Animals_Rainbow.jpg"
+        },
+        {
+          id: 398847109,
+          url: "resources/243/Resized_images/Portrait_Background.jpg"
+        },
+        {
+          id: 65235234,
+          url: "resources/243/Resized_images/Event_PintoWedding.jpg"
+        },
+        {
+          id: 2525345343,
+          url: "resources/243/Resized_images/Portrait_Wednesday.jpg"
+        },
+        {
+          id: 2534342,
+          url: "resources/243/Resized_images/Event_SeasideWedding.jpg"
+        }
+      ], 
+      1
+    )
+    })
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import MediaFactory from './mediaFactory.js';
 
 export default class Lightbox {
     constructor(selector, app) {
@@ -145,7 +357,7 @@ export default class Lightbox {
 
                 lightboxMedia.parentNode.removeChild(lightboxMedia);
                 
-                /*lightboxMedia.parentNode.appendChild(mediaArray);*/
+                lightboxMedia.parentNode.appendChild(mediaArray);
             
 
             
@@ -165,7 +377,7 @@ export default class Lightbox {
 
         
         // accessibilité - navigation via window
-/*
+
         window.addEventListener('keydown', (e) => {
             
                 
@@ -182,7 +394,7 @@ export default class Lightbox {
 
         });
 
-        */
+        
 
         // événements - fermeture lightbox au clic
         lightboxMask.addEventListener('click', () => {
@@ -234,7 +446,7 @@ export default class Lightbox {
 
 
 
-/*
+
     next(mediaArray) {
         const video = document.querySelector('video.media-content');
         const navRight = document.querySelector('.nav-right');
@@ -267,12 +479,12 @@ export default class Lightbox {
         if(navLeft.style.visibility === 'hidden') {
             navLeft.style.visibility = 'visible';
         }
-    }*/
+    }
 
 
 
 
-/*
+
 
     previous(mediaArray) {
         const video = document.querySelector('video.media-content');
@@ -305,5 +517,5 @@ export default class Lightbox {
         if(navRight.style.visibility === 'hidden') {
             navRight.style.visibility = 'visible';
         }
-    }*/
-}
+    }
+}*/

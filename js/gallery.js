@@ -30,6 +30,9 @@ export default class Gallery{
         const mediaCards = mediaArray.map(this.createMediaCard);
         mediaGallery.classList.add('media-gallery');
 
+        console.log(mediaArray);
+
+        
         // réinitialisation de la galerie
         while (gallery.firstChild) {
             gallery.removeChild(gallery.firstChild);
@@ -53,8 +56,8 @@ export default class Gallery{
             // ouverture de la lightbox affichant le média sur lequel on a cliqué
             mediaCardFirstChild.addEventListener('click', () => {
 
-            this.lightbox.createLightbox();
-            this.lightbox.openLightbox(mediaCardId, mediaArray);
+            /*this.lightbox.createLightbox();
+            this.lightbox.openLightbox(mediaCardId, mediaArray);*/
             console.log(mediaCardId)
 
             const medias = ['5234343', '623534343', '625025343', '23523434', '2523434634', '95234343', 
