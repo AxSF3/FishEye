@@ -934,15 +934,21 @@ body {
 
 
 
-/*
+
   #lightbox {
     display: none;
   }
+
+
+
+
   
   #lightbox.open {
     display: block;
   }
   
+
+  /*
   #lightbox-content img {
     display: none;
   }
