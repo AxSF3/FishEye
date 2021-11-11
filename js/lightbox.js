@@ -20,7 +20,7 @@ export default class Lightbox {
      
       this.content.innerHtml = '';
       
-      this.medias.forEach((media) => {
+     this.medias.forEach((media) => {
         const mediaDom = document.createElement('img');
         mediaDom.src = media.url;
         if (media.id === this.currentMedia) {
@@ -29,6 +29,7 @@ export default class Lightbox {
         this.content.appendChild(mediaDom);
       });
     }
+
 
 
     
@@ -44,7 +45,7 @@ export default class Lightbox {
     registerEvents() {
       this.element.querySelector('#lightbox-next').addEventListener('click', this.next);
       this.element.querySelector('#lightbox-previous').addEventListener('click', this.previous);
-      this.element.querySelector('#lightbox-close').addEventListener('click', this.close);
+      this.element.querySelector('#lightbox-close-btn').addEventListener('click', this.close);
     }
     
     next() {
@@ -71,55 +72,7 @@ export default class Lightbox {
     }
   }
  
-  document.querySelector('#lightbox').addEventListener('click', () => {
-    
-    new Lightbox(
-      [
-        {
-          id: 5234343,
-          url: "resources/243/Resized_images/Animals_Wild_Horses_in_the_mountains.mp4"
-          
-        },
-        {
-          id: 623534343,
-          url: "resources/243/Resized_images/Travel_Lonesome.jpg"
-        },
-        {
-          id: 625025343,
-          url: "resources/243/Resized_images/Travel_HillsideColor.jpg"
-        },
-        {
-          id: 23523434,
-          url: "resources/243/Resized_images/Event_BenevidesWedding.jpg"
-        },
-        {
-          id: 2523434634,
-          url: "resources/243/Resized_images/Portrait_Nora.jpg"
-        },
-        {
-          id: 95234343,
-          url: "resources/243/Resized_images/Animals_Rainbow.jpg"
-        },
-        {
-          id: 398847109,
-          url: "resources/243/Resized_images/Portrait_Background.jpg"
-        },
-        {
-          id: 65235234,
-          url: "resources/243/Resized_images/Event_PintoWedding.jpg"
-        },
-        {
-          id: 2525345343,
-          url: "resources/243/Resized_images/Portrait_Wednesday.jpg"
-        },
-        {
-          id: 2534342,
-          url: "resources/243/Resized_images/Event_SeasideWedding.jpg"
-        }
-      ], 
-      1
-    )
-    })
+
   
   
 
