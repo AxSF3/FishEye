@@ -30,7 +30,7 @@ export default class Gallery{
         const mediaCards = mediaArray.map(this.createMediaCard);
         mediaGallery.classList.add('media-gallery');
 
-        console.log(mediaArray);
+        /*console.log(mediaArray);*/
 
         
         // réinitialisation de la galerie
@@ -58,7 +58,7 @@ export default class Gallery{
 
             /*this.lightbox.createLightbox();
             this.lightbox.openLightbox(mediaCardId, mediaArray);*/
-            console.log(mediaCardId)
+            /*console.log(mediaCardId)*/
 
             const medias = ['5234343', '623534343', '625025343', '23523434', '2523434634', '95234343', 
             '398847109', '65235234', '2525345343', '2534342'];

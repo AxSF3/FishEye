@@ -59,8 +59,10 @@ export default class PhotographerPage {
         const hero = new Hero(relevantPhotographer, photographerPageMain, form, relevantMediasDefault, gallery);
         const dropdownMenu = new Dropdown(relevantMediasDefault, photographerPageMain, gallery/*, lightbox*/);
         
-        document.querySelector('.media-card').addEventListener('click', () => {
-    
+        document.querySelector('.lightbox-media').addEventListener('click', () => {
+
+          console.log('test')
+
           new Lightbox(
             [
               {
