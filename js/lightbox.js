@@ -1,5 +1,3 @@
-
-
 export default class Lightbox {
     constructor(medias, currentMedia) {
       this.element = document.getElementById('lightbox');
@@ -13,9 +11,9 @@ export default class Lightbox {
       this.element.classList.add('open');
       this.registerEvents();
     }
+    
 
-    
-    
+
     createMedias() {
      
       this.content.innerHtml = '';
