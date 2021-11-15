@@ -946,9 +946,9 @@ body {
   #lightbox.open {
     display: block;
   }
-  
 
-  /*
+
+  
   #lightbox-content img {
     display: none;
   }
@@ -956,4 +956,4 @@ body {
   
   #lightbox-content img.active {
     display: block;
-  }*/
+  }
