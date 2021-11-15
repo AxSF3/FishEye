@@ -36,7 +36,7 @@ export default class Lightbox {
       this.element.classList.remove('open');
       this.element.querySelector('#lightbox-next').removeEventListener('click', this.next);
       this.element.querySelector('#lightbox-previous').removeEventListener('click', this.previous);
-      this.element.querySelector('#lightbox-close').removeEventListener('click', this.close);
+      this.element.querySelector('#lightbox-close-btn').removeEventListener('click', this.close);
       console.log('juste ici')
     }
     
@@ -48,6 +48,8 @@ export default class Lightbox {
     
     next() {
       console.log('ici')
+
+
       let currentElement = this.content.querySelector('img.active');
       currentElement.classList.remove('active');
       if (currentElement.nextSibling === null) {

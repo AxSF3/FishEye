@@ -59,57 +59,9 @@ export default class PhotographerPage {
         const hero = new Hero(relevantPhotographer, photographerPageMain, form, relevantMediasDefault, gallery);
         const dropdownMenu = new Dropdown(relevantMediasDefault, photographerPageMain, gallery/*, lightbox*/);
         
-        document.querySelector('.media-card').addEventListener('click', () => {
+  
 
-          console.log('test')
-
-          new Lightbox(
-            [
-              {
-                id: 5234343,
-                url: "resources/243/Resized_images/Animals_Wild_Horses_in_the_mountains.mp4"
-                
-              },
-              {
-                id: 623534343,
-                url: "resources/243/Resized_images/Travel_Lonesome.jpg"
-              },
-              {
-                id: 625025343,
-                url: "resources/243/Resized_images/Travel_HillsideColor.jpg"
-              },
-              {
-                id: 23523434,
-                url: "resources/243/Resized_images/Event_BenevidesWedding.jpg"
-              },
-              {
-                id: 2523434634,
-                url: "resources/243/Resized_images/Portrait_Nora.jpg"
-              },
-              {
-                id: 95234343,
-                url: "resources/243/Resized_images/Animals_Rainbow.jpg"
-              },
-              {
-                id: 398847109,
-                url: "resources/243/Resized_images/Portrait_Background.jpg"
-              },
-              {
-                id: 65235234,
-                url: "resources/243/Resized_images/Event_PintoWedding.jpg"
-              },
-              {
-                id: 2525345343,
-                url: "resources/243/Resized_images/Portrait_Wednesday.jpg"
-              },
-              {
-                id: 2534342,
-                url: "resources/243/Resized_images/Event_SeasideWedding.jpg"
-              }
-            ], 
-            1
-          )
-          })
+       
 
 
 
@@ -142,7 +94,72 @@ export default class PhotographerPage {
         gallery.createGallery();
         gallery.createBottomBox();
         dropdownMenu.initializeDropdownMenu();
+        
+        console.log(document.querySelector('.media-card'));
+        
 
+
+        document.querySelectorAll('.media-card').forEach((media)  => {
+
+          media.addEventListener('click', () => {
+
+
+
+
+
+            console.log('test')
+  
+  
+  
+            new Lightbox(
+              [
+                {
+                  id: 5234343,
+                  url: "resources/243/Resized_images/Animals_Wild_Horses_in_the_mountains.mp4"
+                  
+                },
+                {
+                  id: 623534343,
+                  url: "resources/243/Resized_images/Travel_Lonesome.jpg"
+                },
+                {
+                  id: 625025343,
+                  url: "resources/243/Resized_images/Travel_HillsideColor.jpg"
+                },
+                {
+                  id: 23523434,
+                  url: "resources/243/Resized_images/Event_BenevidesWedding.jpg"
+                },
+                {
+                  id: 2523434634,
+                  url: "resources/243/Resized_images/Portrait_Nora.jpg"
+                },
+                {
+                  id: 95234343,
+                  url: "resources/243/Resized_images/Animals_Rainbow.jpg"
+                },
+                {
+                  id: 398847109,
+                  url: "resources/243/Resized_images/Portrait_Background.jpg"
+                },
+                {
+                  id: 65235234,
+                  url: "resources/243/Resized_images/Event_PintoWedding.jpg"
+                },
+                {
+                  id: 2525345343,
+                  url: "resources/243/Resized_images/Portrait_Wednesday.jpg"
+                },
+                {
+                  id: 2534342,
+                  url: "resources/243/Resized_images/Event_SeasideWedding.jpg"
+                }
+              ], 
+              5234343
+            )
+            })
+        })
+        
         
 /*
         const gallerySection = document.querySelector('.gallery');

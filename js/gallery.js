@@ -29,6 +29,7 @@ export default class Gallery{
         const mediaGallery = document.createElement('div');
         const mediaCards = mediaArray.map(this.createMediaCard);
         mediaGallery.classList.add('media-gallery');
+        console.log(mediaArray)
 
         /*console.log(mediaArray);*/
 
