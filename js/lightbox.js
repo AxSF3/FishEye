@@ -52,12 +52,16 @@ export default class Lightbox {
 
       let currentElement = this.content.querySelector('img.active');
       currentElement.classList.remove('active');
+      
       if (currentElement.nextSibling === null) {
         currentElement = this.content.querySelector('img:first-child');
+        console.log(currentElement)
       } else {
         currentElement = currentElement.nextSibling;
+        console.log(currentElement)
       }
       currentElement.classList.add('active');
+      console.log(currentElement)
     }
     
     previous() {

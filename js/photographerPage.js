@@ -103,10 +103,6 @@ export default class PhotographerPage {
 
           media.addEventListener('click', () => {
 
-
-
-
-
             console.log('test')
   
   
@@ -155,7 +151,17 @@ export default class PhotographerPage {
                   url: "resources/243/Resized_images/Event_SeasideWedding.jpg"
                 }
               ], 
-              5234343
+              5234343,
+              623534343,
+              625025343,
+              23523434,
+              2523434634,
+              95234343,
+              398847109,
+              65235234,
+              2525345343,
+              2534342
+
             )
             })
         })

@@ -184,7 +184,6 @@ export default class Dropdown {
         this.gallery.displayMediaGallery(sortedRelevantMedias); 
         this.lightbox.generateLightboxMedias(sortedRelevantMedias);
      
-
     }
 
 

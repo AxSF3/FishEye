@@ -43,7 +43,7 @@ export default class Gallery{
         mediaCards.forEach(mediaCard => {
             mediaGallery.appendChild(mediaCard);
         }); 
-    
+
         mediaCards.forEach(mediaCard => {
 
             const mediaCardFirstChild = mediaCard.firstChild;
@@ -54,12 +54,12 @@ export default class Gallery{
 
             this.addOrRemoveLike(mediaHeartNumber, heartBlock, rating);
 
+            
+
             // ouverture de la lightbox affichant le média sur lequel on a cliqué
+            
             mediaCardFirstChild.addEventListener('click', () => {
 
-            /*this.lightbox.createLightbox();
-            this.lightbox.openLightbox(mediaCardId, mediaArray);*/
-            /*console.log(mediaCardId)*/
 
             const medias = ['5234343', '623534343', '625025343', '23523434', '2523434634', '95234343', 
             '398847109', '65235234', '2525345343', '2534342'];
@@ -69,7 +69,7 @@ export default class Gallery{
             renderMedia(mediaCardId);
             
              
-
+                
 
               
             
@@ -80,7 +80,7 @@ export default class Gallery{
             
                 if(activeElement) {
                     document.querySelector('img.active').classList.remove('active');
-                    document.querySelector('img[mediaCardId='+mediaCardId+']').classList.add('active')  
+                    document.querySelector('img[data-media-id='+mediaCardId+']').classList.add('active')  
                 } else {
                     
                 }
@@ -88,12 +88,12 @@ export default class Gallery{
             }
 
             });
-
+/*
             mediaCardFirstChild.addEventListener('keydown', (e) => {
                 if(e.key === 'Enter') {
                   this.lightbox.openLightbox(mediaCardId);
                 }
-            });
+            });*/
 
             
 
