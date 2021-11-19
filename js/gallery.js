@@ -65,7 +65,7 @@ export default class Gallery{
             '398847109', '65235234', '2525345343', '2534342'];
 
             
-            
+            /*
             renderMedia(mediaCardId);
             
              
@@ -85,7 +85,7 @@ export default class Gallery{
                     
                 }
 
-            }
+            }*/
 
             });
 /*
