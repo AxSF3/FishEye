@@ -64,12 +64,19 @@ export default class Gallery{
             const medias = ['5234343', '623534343', '625025343', '23523434', '2523434634', '95234343', 
             '398847109', '65235234', '2525345343', '2534342'];
 
+
+
+/*
+            this.lightbox.createMedia(mediaArray);
+
+*/
+
             
             /*
             renderMedia(mediaCardId);
             
              
-                
+            
 
               
             

@@ -62,6 +62,8 @@ export default class Lightbox {
       }
       currentElement.classList.add('active');
       console.log(currentElement)
+
+      console.log(this.content)
     }
     
     previous() {
