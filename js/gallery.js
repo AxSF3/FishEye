@@ -1,4 +1,5 @@
-import MediaFactory from './mediaFactory.js';
+import Lightbox from './lightbox.js';
+import MediaFactory, { Video } from './mediaFactory.js';
 
 export default class Gallery{
     constructor(photographer, listMedia, selector, lightbox) {
@@ -74,24 +75,14 @@ export default class Gallery{
             mediaCardFirstChild.addEventListener('click', () => {
 
 
-            const medias = ['5234343', '623534343', '625025343', '23523434', '2523434634', '95234343', 
-            '398847109', '65235234', '2525345343', '2534342'];
 
 
-
-        console.log(mediaArray)
-            
-
+            new Lightbox (mediaArray,mediaCardId)
+    
+                
     
 
-        lightboxMedia.parentNode.removeChild(lightboxMedia);
-        
-        lightboxMedia.parentNode.appendChild(mediaArray);
-    
-
-    
-
-
+       
 
                
                
@@ -185,7 +176,46 @@ export default class Gallery{
 
 /*
 if(mediaArray.toString() === lightboxMedia.dataset['mediaId']){
-    /*lightboxMedia.classList.add('active');
+    lightboxMedia.classList.add('active');
     console.log('bravo')
     }
-*/
+
+
+
+
+renderMedia(mediaCardId);
+
+function renderMedia(mediaCardId) {
+              
+
+
+                var activeElement =  document.querySelector('img.active');
+            
+                if(activeElement) {
+                    document.querySelector('img.active').classList.remove('active');
+                    document.querySelector('img[data-media-id='+mediaCardId+']').classList.add('active')  
+                } else {
+
+
+
+
+
+
+
+
+                }
+
+                    lightboxMedia.parentNode.removeChild(lightboxMedia);
+                    
+                    lightboxMedia.parentNode.appendChild(mediaArray);
+
+                }
+            })
+
+            });
+
+            mediaCardFirstChild.addEventListener('keydown', (e) => {
+                if(e.key === 'Enter') {
+                  this.lightbox.openLightbox(mediaCardId);
+                }
+            });*/
