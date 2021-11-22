@@ -31,7 +31,18 @@ export default class Gallery{
         mediaGallery.classList.add('media-gallery');
         console.log(mediaArray)
 
-        /*console.log(mediaArray);*/
+    
+    
+    
+            
+            // affichage du média lightbox qui correspond à la miniature sélectionnée dans la galerie
+
+
+
+
+
+            
+    
 
         
         // réinitialisation de la galerie
@@ -51,13 +62,15 @@ export default class Gallery{
             const heartBlock = mediaCard.querySelector('.media-card_info__heart');
             const mediaHeartNumber = mediaCard.querySelector('.heart-number');
             const rating = document.querySelector('.rating');
+            const lightboxMedias = document.querySelectorAll('.lightbox-media');
+
 
             this.addOrRemoveLike(mediaHeartNumber, heartBlock, rating);
 
             
 
             // ouverture de la lightbox affichant le média sur lequel on a cliqué
-            
+            lightboxMedias.forEach(lightboxMedia => {
             mediaCardFirstChild.addEventListener('click', () => {
 
 
@@ -66,41 +79,35 @@ export default class Gallery{
 
 
 
-/*
-            this.lightbox.createMedia(mediaArray);
-
-*/
-
-            
-            /*
-            renderMedia(mediaCardId);
-            
-             
+        console.log(mediaArray)
             
 
-              
-            
-            function renderMedia(mediaCardId) {
-              
+    
 
-                var activeElement =  document.querySelector('img.active');
-            
-                if(activeElement) {
-                    document.querySelector('img.active').classList.remove('active');
-                    document.querySelector('img[data-media-id='+mediaCardId+']').classList.add('active')  
-                } else {
+        lightboxMedia.parentNode.removeChild(lightboxMedia);
+        
+        lightboxMedia.parentNode.appendChild(mediaArray);
+    
+
+    
+
+
+
+               
+               
+                
+           
+    
                     
-                }
+/*
+                    lightboxMedia.parentNode.removeChild(lightboxMedia);
+                    
+                    lightboxMedia.parentNode.appendChild(mediaArray);*/
 
-            }*/
+            })
 
             });
-/*
-            mediaCardFirstChild.addEventListener('keydown', (e) => {
-                if(e.key === 'Enter') {
-                  this.lightbox.openLightbox(mediaCardId);
-                }
-            });*/
+
 
             
 
@@ -175,3 +182,10 @@ export default class Gallery{
 
     
 }
+
+/*
+if(mediaArray.toString() === lightboxMedia.dataset['mediaId']){
+    /*lightboxMedia.classList.add('active');
+    console.log('bravo')
+    }
+*/
