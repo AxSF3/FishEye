@@ -11,20 +11,24 @@ export default class Lightbox {
       this.element.classList.add('open');
       this.registerEvents();
     }
-    
-
 
     createMedias() {
      
-      this.content.innerHtml = '';
+    this.content.innerHtml = '';
       
-     this.medias.forEach((media) => {
+    this.medias.forEach((media) => {
+        
         const mediaDom = document.createElement('img');
+        
         mediaDom.src = media.url;
         if (media.id === this.currentMedia) {
           mediaDom.classList.add('active');
+          
         }
         this.content.appendChild(mediaDom);
+        console.log(mediaDom)
+        console.log(this.currentMedia)
+        
       });
     }
 

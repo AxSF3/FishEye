@@ -105,7 +105,7 @@ export default class PhotographerPage {
 
             console.log('test')
   
-  
+           
   
             new Lightbox(
               [
