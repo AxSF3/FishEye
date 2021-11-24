@@ -74,6 +74,7 @@ export class Video {
   }
 
     // Création élément DOM média de la lightbox
+    /*
     createLightboxDom() {
       const lightboxMedia = document.createElement('figure');
       const mediaContent = document.createElement('video');
@@ -94,7 +95,7 @@ export class Video {
       lightboxMedia.dataset['mediaId'] = this.id;
   
       return lightboxMedia;
-    }
+    }*/
 
 }
 
@@ -161,6 +162,7 @@ export class Image {
   }
 
     // Création élément DOM média de la lightbox
+    /*
     createLightboxDom() {
       const lightboxMedia = document.createElement('figure');
       const mediaContent = document.createElement('img');
@@ -179,7 +181,7 @@ export class Image {
       lightboxMedia.dataset['mediaId'] = this.id;
   
       return lightboxMedia;
-    }
+    }*/
 
 
 }
