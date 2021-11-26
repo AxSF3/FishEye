@@ -1,12 +1,10 @@
-import Lightbox from './lightbox.js';
 import MediaFactory, { Video } from './mediaFactory.js';
 
 export default class Gallery{
-    constructor(photographer, listMedia, selector, lightbox) {
+    constructor(photographer, listMedia, selector) {
         this.photographer = photographer;
         this.listMedia = listMedia;
         this.selector = selector;
-        this.lightbox = lightbox;
     }
 
     createGallery() {
@@ -63,7 +61,7 @@ export default class Gallery{
             const heartBlock = mediaCard.querySelector('.media-card_info__heart');
             const mediaHeartNumber = mediaCard.querySelector('.heart-number');
             const rating = document.querySelector('.rating');
-            const lightboxMedias = document.querySelectorAll('.lightbox-media');
+            /*const lightboxMedias = document.querySelectorAll('.lightbox-media');*/
 
 
             this.addOrRemoveLike(mediaHeartNumber, heartBlock, rating);
@@ -71,13 +69,13 @@ export default class Gallery{
             
 
             // ouverture de la lightbox affichant le média sur lequel on a cliqué
-            lightboxMedias.forEach(lightboxMedia => {
+          /*  lightboxMedias.forEach(lightboxMedia => {
             mediaCardFirstChild.addEventListener('click', () => {
 
 
 
 
-            new Lightbox (mediaArray,mediaCardId)
+            new Lightbox (mediaArray,mediaCardId)*/
     
                 
     
@@ -95,10 +93,10 @@ export default class Gallery{
                     
                     lightboxMedia.parentNode.appendChild(mediaArray);*/
 
-            })
+          /*  })
 
             });
-
+*/
 
             
 
