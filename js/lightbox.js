@@ -1,5 +1,6 @@
 export default class Lightbox {
     constructor(medias, currentMedia) {
+        
       this.element = document.getElementById('lightbox');
       this.content = document.getElementById('lightbox-content');
       this.next = this.next.bind(this);
@@ -10,19 +11,29 @@ export default class Lightbox {
       this.createMedias();
       this.element.classList.add('open');
       this.registerEvents();
+      
     }
+
+
+
+
+
 
     createMedias() {
      
-    this.content.innerHtml = '';
+    this.content.innerHTML = '';
       
     this.medias.forEach((media) => {
         
+
+       
         const mediaDom = document.createElement('img');
         
         mediaDom.src = media.url;
         if (media.id === this.currentMedia) {
+            
           mediaDom.classList.add('active');
+         
           
         }
         this.content.appendChild(mediaDom);
