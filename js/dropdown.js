@@ -1,9 +1,8 @@
 export default class Dropdown {
-    constructor(listMedia, selector, gallery, lightbox) {
+    constructor(listMedia, selector, gallery) {
         this.listMedia = listMedia;
         this.selector = selector;
         this.gallery = gallery;
-        this.lightbox = lightbox;
     }
 
     createDropdownMenu() {
@@ -182,7 +181,6 @@ export default class Dropdown {
         const sortedRelevantMedias = this.sortRelevantMedias(sortCategory, this.listMedia);
         
         this.gallery.displayMediaGallery(sortedRelevantMedias); 
-        this.lightbox.generateLightboxMedias(sortedRelevantMedias);
      
     }
 

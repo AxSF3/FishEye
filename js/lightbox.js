@@ -492,4 +492,6 @@ export default class Lightbox {
             navRight.style.visibility = 'visible';
         }
     }
-}*/
+}
+
+*/
