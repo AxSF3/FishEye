@@ -98,7 +98,7 @@ export default class PhotographerPage {
         console.log(document.querySelector('.media-card'));
         
 
-
+/*
         document.querySelectorAll('.media-card').forEach((media)  => {
 
           media.addEventListener('load', () => {
@@ -164,7 +164,7 @@ export default class PhotographerPage {
 
             )
             })
-        })
+        })*/
         
         
 
