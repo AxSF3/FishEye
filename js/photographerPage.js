@@ -101,7 +101,7 @@ export default class PhotographerPage {
 
         document.querySelectorAll('.media-card').forEach((media)  => {
 
-          media.addEventListener('click', () => {
+          media.addEventListener('load', () => {
 
             console.log('test')
   
