@@ -94,14 +94,18 @@ export default class PhotographerPage {
         gallery.createGallery();
         gallery.createBottomBox();
         dropdownMenu.initializeDropdownMenu();
+        const current = document.querySelectorAll('#lightbox-content')
+        const lightbox = new Lightbox(medias, current);
         
+
+
         console.log(document.querySelector('.media-card'));
         
 
-
+/*
         document.querySelectorAll('.media-card').forEach((media)  => {
 
-          media.addEventListener('click', () => {
+          media.addEventListener('load', () => {
 
             console.log('test')
   
@@ -164,7 +168,7 @@ export default class PhotographerPage {
 
             )
             })
-        })
+        })*/
         
         
 
