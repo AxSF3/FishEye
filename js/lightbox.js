@@ -25,12 +25,14 @@ export default class Lightbox {
       
     this.medias.forEach((media) => {
         
-
+        console.log(media)
        
         const mediaDom = document.createElement('img');
         
-        mediaDom.src = media.url;
-        if (media.id === this.currentMedia) {
+        mediaDom.src = media.image;
+        mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.image}`;
+        
+        if (parseInt( media.id) === parseInt( this.currentMedia)) {
             
           mediaDom.classList.add('active');
          

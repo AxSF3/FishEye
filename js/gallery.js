@@ -1,3 +1,4 @@
+import Lightbox from './lightbox.js';
 import MediaFactory, { Video } from './mediaFactory.js';
 
 export default class Gallery{
@@ -69,14 +70,13 @@ export default class Gallery{
             
 
             // ouverture de la lightbox affichant le média sur lequel on a cliqué
-          /*  lightboxMedias.forEach(lightboxMedia => {
-            mediaCardFirstChild.addEventListener('click', () => {
+            
 
+                mediaCard.addEventListener('click', () => {
+      
+                    new Lightbox(mediaArray, mediaCardId)
 
-
-
-            new Lightbox (mediaArray,mediaCardId)*/
-    
+              })
                 
     
 
@@ -87,16 +87,7 @@ export default class Gallery{
                 
            
     
-                    
-/*
-                    lightboxMedia.parentNode.removeChild(lightboxMedia);
-                    
-                    lightboxMedia.parentNode.appendChild(mediaArray);*/
 
-          /*  })
-
-            });
-*/
 
             
 
