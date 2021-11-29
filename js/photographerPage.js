@@ -96,7 +96,7 @@ export default class PhotographerPage {
         dropdownMenu.initializeDropdownMenu();
         const current = document.querySelectorAll('#lightbox-content')
         const lightbox = new Lightbox(medias, current);
-        
+        lightbox.createMedias();
 
 
         console.log(document.querySelector('.media-card'));
@@ -105,7 +105,7 @@ export default class PhotographerPage {
 /*
         document.querySelectorAll('.media-card').forEach((media)  => {
 
-          media.addEventListener('load', () => {
+          media.addEventListener('click', () => {
 
             console.log('test')
   
