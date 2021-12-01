@@ -828,8 +828,8 @@ body {
     left: 50%;
     top: 10%;
     transform: translate(-50%);
-    max-width: calc(100vw - 20px);
-    height: 450px;
+   /* max-width: calc(100vw - 20px);*/
+    height: 500px;
     border-radius: 5px;
     overflow: hidden;
     display: flex;
@@ -857,10 +857,11 @@ body {
     display: flex;
     align-items: center;
   }
+  /*
   #lightbox .media-caption {
     text-align: center;
     font-size: 14px;
-  }
+  }*/
   
   .lightbox-mask {
     position: fixed;
@@ -872,14 +873,14 @@ body {
     overflow: hidden;
     background: rgba(0, 0, 0, 0.8);
   }
-  
+  /*
   .lightbox-media {
     display: none;
   }
   .lightbox-media.active {
     display: block;
-  }
-  .lightbox-media .media-content {
+  }*/
+  #lightbox-content {
     width: 500px;
     height: 350px;
     border-radius: 10px;
@@ -951,9 +952,21 @@ body {
   
   #lightbox-content img {
     display: none;
+    width: 800px;
+    height: 350px;
+
+    object-fit: contain;
   }
   
   
   #lightbox-content img.active {
     display: block;
   }
+
+/*
+
+  .lol {
+    width: 200%;
+  }
+
+*/
