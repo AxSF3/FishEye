@@ -810,7 +810,7 @@ body {
   
   
   
-  /* lightbox */
+
 
 
 
@@ -820,7 +820,7 @@ body {
     display: none;
   }
   
-  /*.lightbox-modal*/
+
   #lightbox {
     position: fixed;
     z-index: 999;
@@ -860,15 +860,7 @@ body {
       margin-right: -20px;
     }
   }
-  /*
-  @media screen and (max-width: 670px) {
-    .lightbox-modal #lightbox-previous, .lightbox-modal #lightbox-next {
-      margin: 10px;
-      font-size: 23px;
-      
-    }
-  }
-*/
+
   #lightbox #lightbox-previous {
     position: absolute;
     bottom: 200px;
@@ -884,16 +876,7 @@ body {
     padding-left: 50px;
 
   }
-  /*
-  #lightbox #lightbox-content {
-    display: flex;
-    align-items: center;
-  }*/
-  /*
-  #lightbox .media-caption {
-    text-align: center;
-    font-size: 14px;
-  }*/
+
   
   .lightbox-mask {
     position: fixed;
@@ -905,29 +888,9 @@ body {
     overflow: hidden;
     background: rgba(0, 0, 0, 0.8);
   }
-  /*
-  .lightbox-media {
-    display: none;
-  }
-  .lightbox-media.active {
-    display: block;
-  }*/
+
   #lightbox-content {
-    /*
-    width: 500px;
-    height: 350px;
-    border-radius: 10px;
-    object-fit: contain;*/
 
-/*
-    position: absolute;
-    display: block;
-    height: 984px;
-    left: 101px;
-    top: 40px;*/
-
-    /*
-    padding-right: 130px;*/
   }
 
   #lightbox-content img {
@@ -940,15 +903,17 @@ body {
    
   }
 
+  #lightbox-content video {
+    display: none;
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    padding-right: 100px;
+   }
 
 
-/*
-  @media screen and (max-width: 1400px) {
-    #lightbox-content img{
-      width: 90%;
-    }
-  }
-*/
+
+
 
 
   
@@ -965,12 +930,7 @@ body {
     cursor: pointer;
     transform: scale(0.7);
   }
-  /*
-  @media screen and (max-width: 670px) {
-    #lightbox-close-btn {
-      right: -3px;
-    }
-  }*/
+
   #lightbox-close-btn::before, #lightbox-close-btn::after {
     position: absolute;
     left: 15px;
