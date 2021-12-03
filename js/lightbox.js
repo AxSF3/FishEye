@@ -17,7 +17,7 @@ export default class Lightbox {
 
 
 
-
+/*
 
 createMedias() {
      
@@ -57,17 +57,47 @@ createMedias() {
         if (parseInt( media.id) === parseInt( this.currentMedia)) {
             
           mediaDom.classList.add('active');
+          
          
           
         }
-        this.content.appendChild(videoTag);
+        this.content.appendChild(mediaDom);
         console.log(mediaDom)
+        console.log(videoTag)
         console.log(this.currentMedia)
         
       });
     }
 
+*/
 
+
+createMedias() {
+
+  this.content.innerHTML = '';
+
+  this.medias.forEach((media) => {
+
+    let mediaDom;
+
+    if (media.hasOwnProperty('image')) {
+      mediaDom = document.createElement('img');
+      mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.image}`;
+    }
+    else {
+      mediaDom = document.createElement('video');
+      let videoSrc = document.createElement('source')
+      mediaDom.appendChild(videoSrc);
+      videoSrc.src = `resources/${media.photographerId}/Resized_images/${media.video}`;
+    }
+
+    if (parseInt(media.id) === parseInt(this.currentMedia)) {
+      mediaDom.classList.add('active');
+    }
+
+    this.content.appendChild(mediaDom);
+  });
+}
 
     
     close() {
