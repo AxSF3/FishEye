@@ -26,15 +26,11 @@ createMedias() {
     this.medias.forEach((media) => {
         
         console.log(media)
-       
-        /*const mediaDom = document.createElement('img');*/
-        
 
         
-        /*mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.video}`;*/
-
-
         let mediaDom;
+        let videoTag; 
+
         if(media.hasOwnProperty('image')) { 
           
           mediaDom = document.createElement('img') 
@@ -43,13 +39,13 @@ createMedias() {
       
         }
         else {
-        let videoTag = document.createElement('video');
+        videoTag = document.createElement('video');
         mediaDom = document.createElement('source') 
         videoTag.appendChild(mediaDom);
         mediaDom.src = media.video;
         mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.video}`;
         
-      
+
       }
 
 
@@ -64,7 +60,7 @@ createMedias() {
          
           
         }
-        this.content.appendChild(mediaDom);
+        this.content.appendChild(videoTag);
         console.log(mediaDom)
         console.log(this.currentMedia)
         
