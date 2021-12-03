@@ -27,14 +27,36 @@ createMedias() {
         
         console.log(media)
        
-        const mediaDom = document.createElement('img');
+        /*const mediaDom = document.createElement('img');*/
         
 
         
-        mediaDom.src = media.image;
-        mediaDom.src = media.video;
-        mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.image}`;
         /*mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.video}`;*/
+
+
+        let mediaDom;
+        if(media.hasOwnProperty('image')) { 
+          
+          mediaDom = document.createElement('img') 
+          mediaDom.src = media.image;
+          mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.image}`;
+      
+        }
+        else {
+        let videoTag = document.createElement('video');
+        mediaDom = document.createElement('source') 
+        videoTag.appendChild(mediaDom);
+        mediaDom.src = media.video;
+        mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.video}`;
+        
+      
+      }
+
+
+
+
+
+
       
         if (parseInt( media.id) === parseInt( this.currentMedia)) {
             
