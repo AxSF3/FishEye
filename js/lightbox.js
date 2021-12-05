@@ -119,31 +119,6 @@ createMedias() {
       this.element.querySelector('#lightbox-previous').addEventListener('click', this.previous);
       this.element.querySelector('#lightbox-close-btn').addEventListener('click', this.close);
     }
-    /*
-    next() {
-      console.log('ici')
-
-
-      let currentElement = this.content.querySelector('img.active');
-      currentElement.classList.remove('active');
-      
-      if (currentElement.nextSibling === null) {
-        currentElement = this.content.querySelector('img:first-child');
-        console.log(currentElement)
-      } else {
-        currentElement = currentElement.nextSibling;
-        console.log(currentElement)
-      }
-      currentElement.classList.add('active');
-      console.log(currentElement)
-
-      console.log(this.content)
-     
-    }
-*/
-
-
-
 
 
     next() {
