@@ -16,62 +16,6 @@ export default class Lightbox {
 
 
 
-
-/*
-
-createMedias() {
-     
-    this.content.innerHTML = '';
-      
-    this.medias.forEach((media) => {
-        
-        console.log(media)
-
-        
-        let mediaDom;
-        let videoTag; 
-
-        if(media.hasOwnProperty('image')) { 
-          
-          mediaDom = document.createElement('img') 
-          mediaDom.src = media.image;
-          mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.image}`;
-      
-        }
-        else {
-        videoTag = document.createElement('video');
-        mediaDom = document.createElement('source') 
-        videoTag.appendChild(mediaDom);
-        mediaDom.src = media.video;
-        mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.video}`;
-        
-
-      }
-
-
-
-
-
-
-      
-        if (parseInt( media.id) === parseInt( this.currentMedia)) {
-            
-          mediaDom.classList.add('active');
-          
-         
-          
-        }
-        this.content.appendChild(mediaDom);
-        console.log(mediaDom)
-        console.log(videoTag)
-        console.log(this.currentMedia)
-        
-      });
-    }
-
-*/
-
-
 createMedias() {
 
   this.content.innerHTML = '';
