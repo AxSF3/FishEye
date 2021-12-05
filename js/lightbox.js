@@ -79,6 +79,7 @@ createMedias() {
   this.medias.forEach((media) => {
 
     let mediaDom;
+    let videoSrc = document.createElement('source');
 
     if (media.hasOwnProperty('image')) {
       mediaDom = document.createElement('img');
@@ -86,16 +87,20 @@ createMedias() {
     }
     else {
       mediaDom = document.createElement('video');
-      let videoSrc = document.createElement('source')
+      mediaDom.setAttribute("controls","controls")
+      
       mediaDom.appendChild(videoSrc);
       videoSrc.src = `resources/${media.photographerId}/Resized_images/${media.video}`;
+      
     }
 
     if (parseInt(media.id) === parseInt(this.currentMedia)) {
       mediaDom.classList.add('active');
+      videoSrc.classList.add('active');
     }
 
     this.content.appendChild(mediaDom);
+    console.log(mediaDom)
   });
 }
 
@@ -114,7 +119,7 @@ createMedias() {
       this.element.querySelector('#lightbox-previous').addEventListener('click', this.previous);
       this.element.querySelector('#lightbox-close-btn').addEventListener('click', this.close);
     }
-    
+    /*
     next() {
       console.log('ici')
 
@@ -133,13 +138,48 @@ createMedias() {
       console.log(currentElement)
 
       console.log(this.content)
+     
     }
+*/
+
+
+
+
+
+    next() {
+      console.log('ici')
+
+      let currentElement;
+      currentElement = this.content.querySelector('lightbox-content active');
+      currentElement.classList.remove('active');
+      
+      if (currentElement.nextSibling === null) {
+        currentElement = this.content.querySelector('lightbox-content');
+        console.log(currentElement)
+      } else {
+        currentElement = currentElement.nextSibling;
+        console.log(currentElement)
+      }
+      currentElement.classList.add('active');
+
+
+      console.log(currentElement)
+
+      console.log(this.content)
+     
+    }
+
+
+
+
+
+
     
     previous() {
-      let currentElement = this.content.querySelector('img.active');
+      let currentElement = this.content.querySelector('lightbox-content active');
       currentElement.classList.remove('active');
       if (currentElement.previousSibling === null) {
-        currentElement = this.content.querySelector('img:last-child');
+        currentElement = this.content.querySelector('lightbox-content');
       } else {
         currentElement = currentElement.previousSibling;
       }
