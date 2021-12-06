@@ -24,9 +24,11 @@ createMedias() {
 
     let mediaDom;
     let videoSrc = document.createElement('source');
+    /*videoSrc.classList.add('test');*/
 
     if (media.hasOwnProperty('image')) {
       mediaDom = document.createElement('img');
+     /* mediaDom.classList.add('test');*/
       mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.image}`;
     }
     else {
@@ -69,11 +71,11 @@ createMedias() {
       console.log('ici')
 
       let currentElement;
-      currentElement = this.content.querySelector('lightbox-content active');
+      currentElement = this.content.querySelector('.active'); /* img.active */
       currentElement.classList.remove('active');
       
       if (currentElement.nextSibling === null) {
-        currentElement = this.content.querySelector('lightbox-content');
+        currentElement = this.content.querySelector('*:first-child'); /* img:last-child */
         console.log(currentElement)
       } else {
         currentElement = currentElement.nextSibling;
@@ -95,10 +97,10 @@ createMedias() {
 
     
     previous() {
-      let currentElement = this.content.querySelector('lightbox-content active');
+      let currentElement = this.content.querySelector('.active');
       currentElement.classList.remove('active');
       if (currentElement.previousSibling === null) {
-        currentElement = this.content.querySelector('lightbox-content');
+        currentElement = this.content.querySelector('*:last-child');
       } else {
         currentElement = currentElement.previousSibling;
       }
