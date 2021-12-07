@@ -42,7 +42,7 @@ createMedias() {
 
     if (parseInt(media.id) === parseInt(this.currentMedia)) {
       mediaDom.classList.add('active');
-      videoSrc.classList.add('active');
+     /* videoSrc.classList.add('active');*/
     }
 
     this.content.appendChild(mediaDom);
@@ -71,11 +71,11 @@ createMedias() {
       console.log('ici')
 
       let currentElement;
-      currentElement = this.content.querySelector('.active'); /* img.active */
+      currentElement = this.content.querySelector('.active'); 
       currentElement.classList.remove('active');
       
       if (currentElement.nextSibling === null) {
-        currentElement = this.content.querySelector('*:first-child'); /* img:last-child */
+        currentElement = this.content.querySelector('*:first-child');
         console.log(currentElement)
       } else {
         currentElement = currentElement.nextSibling;
