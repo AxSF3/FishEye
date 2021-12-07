@@ -846,7 +846,7 @@ body {
     font-size: 42px;
     display: flex;
     margin: 20px;
-    
+    z-index: 100;
 
 
   }
@@ -924,6 +924,7 @@ body {
     opacity: 1;
     cursor: pointer;
     transform: scale(0.7);
+    z-index: 100;
   }
 
   #lightbox-close-btn::before, #lightbox-close-btn::after {
