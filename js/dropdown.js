@@ -132,13 +132,13 @@ export default class Dropdown {
         return this.sortGallery(toggleContentAfterSelection);
     }
 
-    // galerie et lightbox triées par défaut en fonction de la popularité
+    // galerie triée par défaut en fonction de la popularité
     initializeDropdownMenu() {
         const dropdownToggle = document.querySelector('.dropdown-toggle');
         const toggleContent = dropdownToggle.textContent;
         const sortedRelevantMediasPopularity = this.sortRelevantMedias(toggleContent, this.listMedia);
         this.gallery.displayMediaGallery(sortedRelevantMediasPopularity);
-        /*this.lightbox.generateLightboxMedias(sortedRelevantMediasPopularity);*/
+
 
     }
 
@@ -176,7 +176,7 @@ export default class Dropdown {
 
     }
 
-    // fonction de tri de la galerie et de la lightbox en fonction de l'option choisie
+    // fonction de tri de la galerie en fonction de l'option choisie
     sortGallery(sortCategory) {
         const sortedRelevantMedias = this.sortRelevantMedias(sortCategory, this.listMedia);
         

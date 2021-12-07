@@ -1,5 +1,4 @@
 import Form from './form.js';
-import Lightbox from './lightbox.js';
 import Gallery from './gallery.js';
 import Hero from './hero.js';
 import Dropdown from './dropdown.js';
@@ -53,37 +52,13 @@ export default class PhotographerPage {
         const modals = document.querySelector('.modals');
 
         const form = new Form (relevantPhotographer, modals, photographerPageMain);
-        /*const lightbox = new Lightbox();*/
-        
-        const gallery = new Gallery(relevantPhotographer, relevantMediasDefault, photographerPageMain/*, lightbox*/);
+        const gallery = new Gallery(relevantPhotographer, relevantMediasDefault, photographerPageMain);
         const hero = new Hero(relevantPhotographer, photographerPageMain, form, relevantMediasDefault, gallery);
-        const dropdownMenu = new Dropdown(relevantMediasDefault, photographerPageMain, gallery/*, lightbox*/);
+        const dropdownMenu = new Dropdown(relevantMediasDefault, photographerPageMain, gallery);
         
   
 
        
-
-
-
-        // Récupère éléments nécessaire pour dropdown + tags
-        /*
-        const tagElement = document.getElementsByClassName('tag');
-        
-        const activeElement = document.getElementsByClassName('active');
-
-        const optionsElement = dropdownMenu.createDropdownMenu;
-
-        const test = lightbox.openLightbox;
-        const test1 = hero.getRelevantMedias;
-
-
-
-
-        console.log(tagElement);
-        console.log(activeElement);
-        console.log(optionsElement);
-
-        */
 
       
 
@@ -94,10 +69,7 @@ export default class PhotographerPage {
         gallery.createGallery();
         gallery.createBottomBox();
         dropdownMenu.initializeDropdownMenu();
-        /*
-        const current = document.querySelectorAll('#lightbox-content')
-        const lightbox = new Lightbox(medias, current);
-        lightbox.createMedias();*/
+
 
 
         console.log(document.querySelector('.media-card'));

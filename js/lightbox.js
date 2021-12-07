@@ -22,6 +22,8 @@ createMedias() {
 
   this.medias.forEach((media) => {
 
+   
+
     let mediaDom;
     let videoSrc = document.createElement('source');
     /*videoSrc.classList.add('test');*/
@@ -30,6 +32,7 @@ createMedias() {
       mediaDom = document.createElement('img');
      /* mediaDom.classList.add('test');*/
       mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.image}`;
+      
     }
     else {
       mediaDom = document.createElement('video');
@@ -43,6 +46,7 @@ createMedias() {
     if (parseInt(media.id) === parseInt(this.currentMedia)) {
       mediaDom.classList.add('active');
      /* videoSrc.classList.add('active');*/
+     
     }
 
     this.content.appendChild(mediaDom);
@@ -57,6 +61,9 @@ createMedias() {
       this.element.querySelector('#lightbox-next').removeEventListener('click', this.next);
       this.element.querySelector('#lightbox-previous').removeEventListener('click', this.previous);
       this.element.querySelector('#lightbox-close-btn').removeEventListener('click', this.close);
+
+      document.querySelector(".lightbox-mask").style.display = "none";
+
       console.log('juste ici')
     }
     
@@ -75,7 +82,7 @@ createMedias() {
       currentElement.classList.remove('active');
       
       if (currentElement.nextSibling === null) {
-        currentElement = this.content.querySelector('*:first-child');
+        currentElement = this.content.querySelector('Node.firstChild'); /* *:first-child */    /* #lightbox-content:first-child */
         console.log(currentElement)
       } else {
         currentElement = currentElement.nextSibling;
@@ -100,7 +107,7 @@ createMedias() {
       let currentElement = this.content.querySelector('.active');
       currentElement.classList.remove('active');
       if (currentElement.previousSibling === null) {
-        currentElement = this.content.querySelector('*:last-child');
+        currentElement = this.content.querySelector('Node.lastChild'); /* *:last-child */ /* #lightbox-content:last-child */
       } else {
         currentElement = currentElement.previousSibling;
       }

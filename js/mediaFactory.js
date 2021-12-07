@@ -73,29 +73,7 @@ export class Video {
     return cardVideo;
   }
 
-    // Création élément DOM média de la lightbox
-    /*
-    createLightboxDom() {
-      const lightboxMedia = document.createElement('figure');
-      const mediaContent = document.createElement('video');
-      const mediaSrc = document.createElement('source');
-      const mediaCaption = document.createElement('figcaption');
-  
-      lightboxMedia.classList.add('lightbox-media');
-      mediaContent.classList.add('media-content');
-      mediaContent.setAttribute('controls', 'controls');
-      mediaCaption.classList.add('media-caption');
-      mediaCaption.setAttribute('tabindex', '0');
-  
-      mediaSrc.src = `resources/${this.photographerId}/Resized_images/${this.fileName}`;
-      mediaCaption.appendChild(document.createTextNode(`${this.titleContent}`));
-      mediaContent.appendChild(mediaSrc);
-      lightboxMedia.append(mediaContent, mediaCaption);
-  
-      lightboxMedia.dataset['mediaId'] = this.id;
-  
-      return lightboxMedia;
-    }*/
+
 
 }
 
@@ -160,28 +138,6 @@ export class Image {
 
     return cardImage;
   }
-
-    // Création élément DOM média de la lightbox
-    /*
-    createLightboxDom() {
-      const lightboxMedia = document.createElement('figure');
-      const mediaContent = document.createElement('img');
-      const mediaCaption = document.createElement('figcaption');
-  
-      lightboxMedia.classList.add('lightbox-media');
-      mediaContent.classList.add('media-content');
-      mediaCaption.classList.add('media-caption');
-      mediaCaption.setAttribute('tabindex', '0');
-  
-      mediaContent.setAttribute('alt', `${this.desc}`);
-      mediaContent.src = `resources/${this.photographerId}/Resized_images/${this.fileName}`;
-      mediaCaption.appendChild(document.createTextNode(`${this.titleContent}`));
-      lightboxMedia.append(mediaContent, mediaCaption);
-  
-      lightboxMedia.dataset['mediaId'] = this.id;
-  
-      return lightboxMedia;
-    }*/
 
 
 }
