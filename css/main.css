@@ -879,6 +879,7 @@ body {
 
   
   .lightbox-mask {
+    display: none;
     position: fixed;
     z-index: 998;
     left: 0;
@@ -910,12 +911,6 @@ body {
     object-fit: contain;
     padding-right: 100px;
    }
-
-
-
-
-
-
   
   
   
@@ -971,17 +966,7 @@ body {
     display: block;
     width: 70%;
   }
-/*
-  @media screen and (max-width: 1015px) {
-    #lightbox.open {
-      width: 60%;
-    }
-  }
-*/
-
-  
-
-  
+   
   
   #lightbox-content img.active {
     display: block;
@@ -991,11 +976,3 @@ body {
     display: block;
   }
 
-
-/*
-
-  .lol {
-    width: 200%;
-  }
-
-*/
