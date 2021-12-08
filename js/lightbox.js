@@ -26,11 +26,9 @@ createMedias() {
 
     let mediaDom;
     let videoSrc = document.createElement('source');
-    /*videoSrc.classList.add('test');*/
 
     if (media.hasOwnProperty('image')) {
       mediaDom = document.createElement('img');
-     /* mediaDom.classList.add('test');*/
       mediaDom.src = `resources/${media.photographerId}/Resized_images/${media.image}`;
       
     }
@@ -45,7 +43,6 @@ createMedias() {
 
     if (parseInt(media.id) === parseInt(this.currentMedia)) {
       mediaDom.classList.add('active');
-     /* videoSrc.classList.add('active');*/
      
     }
 
@@ -63,6 +60,7 @@ createMedias() {
       this.element.querySelector('#lightbox-close-btn').removeEventListener('click', this.close);
 
       document.querySelector(".lightbox-mask").style.display = "none";
+      document.querySelector('.media-video').setAttribute("controls","controls");
 
       console.log('juste ici')
     }
@@ -82,7 +80,7 @@ createMedias() {
       currentElement.classList.remove('active');
       
       if (currentElement.nextSibling === null) {
-        currentElement = this.content.querySelector('Node.firstChild'); /* *:first-child */    /* #lightbox-content:first-child */
+        currentElement = this.content.firstChild;
         console.log(currentElement)
       } else {
         currentElement = currentElement.nextSibling;
@@ -92,7 +90,6 @@ createMedias() {
 
 
       console.log(currentElement)
-
       console.log(this.content)
      
     }
@@ -107,7 +104,7 @@ createMedias() {
       let currentElement = this.content.querySelector('.active');
       currentElement.classList.remove('active');
       if (currentElement.previousSibling === null) {
-        currentElement = this.content.querySelector('Node.lastChild'); /* *:last-child */ /* #lightbox-content:last-child */
+        currentElement = this.content.lastChild;
       } else {
         currentElement = currentElement.previousSibling;
       }

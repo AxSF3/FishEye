@@ -60,11 +60,15 @@ export default class Gallery{
             // ouverture de la lightbox affichant le média sur lequel on a cliqué
             
 
-                mediaCard.addEventListener('click', () => {
+                mediaCardFirstChild.addEventListener('click', () => {
       
                     new Lightbox(mediaArray, mediaCardId)
 
                     document.querySelector(".lightbox-mask").style.display = "block";
+
+                    document.querySelector('.media-video').removeAttribute("controls","controls");
+
+                    document.querySelector('.media-video').pause();
 
               })
                 
