@@ -852,7 +852,7 @@ body {
   }
 
   #lightbox #lightbox-next {
-    margin-right: 0px;
+    margin-right: -20px;
   }
 
   @media screen and (max-width: 800px) {
@@ -860,6 +860,8 @@ body {
       margin-right: -20px;
     }
   }
+
+
 
   #lightbox #lightbox-previous {
     position: absolute;
@@ -878,6 +880,24 @@ body {
   }
 
   
+  @media screen and (max-width: 700px) {
+    #lightbox #lightbox-next, #lightbox #lightbox-previous  {
+      bottom: 185px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    #lightbox #lightbox-next  {
+      right: 10px;
+    }
+
+    #lightbox #lightbox-previous {
+      left: -10px;
+    }
+  }
+
+
+  
   .lightbox-mask {
     display: none;
     position: fixed;
@@ -891,7 +911,8 @@ body {
   }
 
   #lightbox-content {
-
+    width: 100%;
+    
   }
 
   #lightbox-content img {
@@ -954,10 +975,14 @@ body {
 
 
 
-
   #lightbox {
     display: none;
+    width: 50%;
+    height: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
+
 
 
 
@@ -965,7 +990,7 @@ body {
   
   #lightbox.open {
     display: block;
-    width: 70%;
+    
   }
    
   
