@@ -4,6 +4,7 @@ export default class Dropdown {
         this.selector = selector;
         this.gallery = gallery;
     }
+    
 
     createDropdownMenu() {
         const mediaSelection = document.createElement('div');
@@ -26,7 +27,6 @@ export default class Dropdown {
 
         dropdown.classList.add('dropdown');
         dropdown.setAttribute('aria-labelledby', 'orderby');
-        /*dropdown.setAttribute('tabindex', '2');*/
 
         dropdownToggle.classList.add('dropdown-toggle');
         dropdownToggle.setAttribute('aria-haspopup', 'listbox');
@@ -178,9 +178,14 @@ export default class Dropdown {
 
     // fonction de tri de la galerie en fonction de l'option choisie
     sortGallery(sortCategory) {
+        
         const sortedRelevantMedias = this.sortRelevantMedias(sortCategory, this.listMedia);
         
-        this.gallery.displayMediaGallery(sortedRelevantMedias); 
+        this.gallery.displayMediaGallery(sortedRelevantMedias);
+
+        const heroTags = document.querySelectorAll('.tag');
+        heroTags.forEach((otherHeroTags) => otherHeroTags.classList.remove('active'));
+
      
     }
 

@@ -1,8 +1,8 @@
 export default class MediaFactory {
   static createMedia(mediaData) {
    
-    if (mediaData.hasOwnProperty('image')) return new Image(mediaData.image, mediaData.photographerId,/* mediaData.price,*/ mediaData.likes, mediaData.id, mediaData.desc);
-    else if (mediaData.hasOwnProperty('video')) return new Video(mediaData.video, mediaData.photographerId,/* mediaData.price,*/ mediaData.likes, mediaData.id, mediaData.desc);
+    if (mediaData.hasOwnProperty('image')) return new Image(mediaData.image, mediaData.photographerId, mediaData.likes, mediaData.id, mediaData.desc);
+    else if (mediaData.hasOwnProperty('video')) return new Video(mediaData.video, mediaData.photographerId, mediaData.likes, mediaData.id, mediaData.desc);
     else {
       console.log(mediaData);
     }
@@ -11,10 +11,9 @@ export default class MediaFactory {
 }
 
 export class Video {
-  constructor(fileName, photographerId, /*price,*/ likes, id, desc) {
+  constructor(fileName, photographerId, likes, id, desc) {
     this.fileName = fileName;
     this.photographerId = photographerId;
-    /*this.price = price;*/
     this.likes = likes;
     this.titleContent = this.fileName.slice(0, this.fileName.length-4).replaceAll('_', ' ');
     this.id = id;
@@ -33,7 +32,6 @@ export class Video {
     const heartNumber = document.createElement('div');
     const heart = document.createElement('i');
     const title = document.createElement('div');
-    /*const price = document.createElement('div');*/
     
     mediaVideo.classList.add('media-video');
     mediaVideo.setAttribute('tabindex', '0');
@@ -53,16 +51,13 @@ export class Video {
     heart.setAttribute('title', 'likes');
 
     title.classList.add('title');
-    /*price.classList.add('price');*/
-
     title.appendChild(document.createTextNode(`${this.titleContent}`));
-    /*price.appendChild(document.createTextNode(`${this.price}€`));*/
     mediaVideoSrc.src = `resources/${this.photographerId}/Resized_images/${this.fileName}`;
     heartNumber.innerHTML = this.likes;
 
     mediaVideo.appendChild(mediaVideoSrc);
     mediaCardInfo.appendChild(mediaCardInfoText);
-    mediaCardInfoText.append(title/*, price*/);
+    mediaCardInfoText.append(title);
     mediaCardInfoHeart.append(heartNumber,heart);
     mediaCardInfo.appendChild(mediaCardInfoHeart);
 
@@ -80,11 +75,10 @@ export class Video {
 
 
 export class Image {
-  constructor(fileName, photographerId, /*price,*/ likes, id, desc) {
+  constructor(fileName, photographerId, likes, id, desc) {
   
     this.fileName = fileName;
     this.photographerId = photographerId;
-    /*this.price = price;*/
     this.likes = likes;
     this.titleContent = this.fileName.slice(0, this.fileName.length-4).replaceAll('_', ' ');
     this.id = id;
@@ -102,7 +96,6 @@ export class Image {
     const heartNumber = document.createElement('div');
     const heart = document.createElement('i');
     const title = document.createElement('div');
-    /*const price = document.createElement('div');*/
 
     mediaImage.setAttribute('tabindex', '0');
     mediaImage.setAttribute('alt', `${this.desc}`);
@@ -119,10 +112,7 @@ export class Image {
     heart.setAttribute('title', 'likes');
 
     title.classList.add('title');
-    /*price.classList.add('price');*/
-
     title.appendChild(document.createTextNode(`${this.titleContent}`));
-   /* price.appendChild(document.createTextNode(`${this.price}€`));*/
 
     mediaImage.src = `resources/${this.photographerId}/Resized_images/${this.fileName}`;
     heartNumber.innerHTML = this.likes;
