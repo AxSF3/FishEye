@@ -13,7 +13,7 @@ a {
   text-decoration: none;
 }
 
-.go_to_main {
+.gotomain {
   width: 160px;
   padding: 1px;
   z-index: 99;
@@ -284,7 +284,7 @@ a {
   }
 }
 
-.media-card_info {
+.mediacardinfo {
   width: 100%;
   display: flex;
   font-size: 14px;
@@ -292,7 +292,7 @@ a {
   align-items: center;
 }
 
-.media-card_info__text {
+.media-cardinfotext {
   width: 80%;
   display: flex;
   justify-content: space-between;
@@ -301,7 +301,7 @@ a {
   align-items: center;
 }
 
-.media-card_info__heart {
+.mediacardinfoheart {
   width: 20%;
   text-align: right;
   display: flex;
@@ -310,11 +310,11 @@ a {
   cursor: pointer;
 }
 
-.media-card_info__heart .heart-number {
+.mediacardinfoheart .heart-number {
   margin-right: 3px;
 }
 
-.media-card_info__heart .fa-heart {
+.mediacardinfoheart .fa-heart {
   display: flex;
   align-items: center;
 }
@@ -417,7 +417,7 @@ nav a {
   width: 150px;
 }
 
-#index_main {
+#indexmain {
   margin-top: 25px;
 }
 
@@ -696,16 +696,11 @@ nav a {
   }
 }
 
-#contact {
+.contact {
   margin-top: 10px;
 }
 
-#contact .formData {
-  display: flex;
-  flex-direction: column;
-}
-
-#contact label {
+.contact label {
   font-size: 20px;
   color: black;
   font-weight: normal;
@@ -713,7 +708,7 @@ nav a {
   margin-bottom: 11px;
 }
 
-#contact .text-control {
+.contact .text-control {
   width: 95%;
   border-radius: 8px;
   font-size: 20px;
@@ -721,7 +716,7 @@ nav a {
   outline: none;
 }
 
-#contact .text-control__message {
+.contact .textcontrolmessage {
   height: 140px;
   outline: none;
   border-radius: 8px;
@@ -741,7 +736,7 @@ nav a {
   margin-top: 10px;
 }
 
-.confirmationMsg {
+.confirmationmsg {
   display: none;
   justify-content: center;
   align-items: center;
@@ -750,7 +745,7 @@ nav a {
   text-align: center;
 }
 
-.confirmationMsg.active {
+.confirmationmsg.active {
   display: block;
   position: absolute;
   top: 50%;
@@ -758,7 +753,7 @@ nav a {
 }
 
 @media screen and (max-width: 380px) {
-  .confirmationMsg {
+  .confirmationmsg {
     font-size: 22px;
   }
 }
@@ -773,7 +768,7 @@ input {
   border: 3px solid transparent;
 }
 
-#contact input {
+.contact input {
   padding: 8px;
 }
 
@@ -782,22 +777,22 @@ textarea[name="message"] {
   resize: none;
 }
 
-#firstNameError {
+#firstnameerror {
   color: red;
   font-size: 20px;
 }
 
-#lastNameError {
+#lastnameerror {
   color: red;
   font-size: 20px;
 }
 
-#emailError {
+#emailerror {
   color: red;
   font-size: 20px;
 }
 
-#messageError {
+#messageerror {
   color: red;
   font-size: 20px;
 }
