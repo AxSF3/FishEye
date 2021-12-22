@@ -1,24 +1,11 @@
-export default class MediaFactory {
-  static createMedia(mediaData) {
-   
-    if (mediaData.hasOwnProperty('image')) return new Image(mediaData.image, mediaData.photographerId, mediaData.likes, mediaData.id, mediaData.desc);
-    else if (mediaData.hasOwnProperty('video')) return new Video(mediaData.video, mediaData.photographerId, mediaData.likes, mediaData.id, mediaData.desc);
-    else {
-      console.log(mediaData);
-    }
-  }
-
-}
-
 export class Video {
   constructor(fileName, photographerId, likes, id, desc) {
     this.fileName = fileName;
     this.photographerId = photographerId;
     this.likes = likes;
-    this.titleContent = this.fileName.slice(0, this.fileName.length-4).replaceAll('_', ' ');
+    this.titleContent = this.fileName.slice(0, this.fileName.length - 4).replaceAll('_', ' ');
     this.id = id;
     this.desc = desc;
-
   }
 
   // Création élément DOM média de la galerie
@@ -32,17 +19,17 @@ export class Video {
     const heartNumber = document.createElement('div');
     const heart = document.createElement('i');
     const title = document.createElement('div');
-    
+
     mediaVideo.classList.add('media-video');
     mediaVideo.setAttribute('tabindex', '0');
     mediaVideo.setAttribute('title', `${this.desc}`);
     mediaVideo.setAttribute('controls', 'controls');
     mediaVideo.setAttribute('muted', 'muted');
 
-    mediaCardInfo.classList.add('media-card_info');
-    mediaCardInfoText.classList.add('media-card_info__text');
+    mediaCardInfo.classList.add('mediacardinfo');
+    mediaCardInfoText.classList.add('media-cardinfotext');
 
-    mediaCardInfoHeart.classList.add('media-card_info__heart');
+    mediaCardInfoHeart.classList.add('mediacardinfoheart');
     mediaCardInfoHeart.setAttribute('tabindex', '0');
     mediaCardInfoHeart.setAttribute('aria-label', `${this.likes} likes cliquez pour ajouter un like`);
 
@@ -58,32 +45,25 @@ export class Video {
     mediaVideo.appendChild(mediaVideoSrc);
     mediaCardInfo.appendChild(mediaCardInfoText);
     mediaCardInfoText.append(title);
-    mediaCardInfoHeart.append(heartNumber,heart);
+    mediaCardInfoHeart.append(heartNumber, heart);
     mediaCardInfo.appendChild(mediaCardInfoHeart);
 
     cardVideo.append(mediaVideo, mediaCardInfo);
 
-    cardVideo.dataset['mediaTitle'] = this.titleContent;
+    cardVideo.dataset.mediaTitle = this.titleContent;
 
     return cardVideo;
   }
-
-
-
 }
-
-
 
 export class Image {
   constructor(fileName, photographerId, likes, id, desc) {
-  
     this.fileName = fileName;
     this.photographerId = photographerId;
     this.likes = likes;
-    this.titleContent = this.fileName.slice(0, this.fileName.length-4).replaceAll('_', ' ');
+    this.titleContent = this.fileName.slice(0, this.fileName.length - 4).replaceAll('_', ' ');
     this.id = id;
     this.desc = desc;
-    
   }
 
   // Création élément DOM média de la galerie
@@ -100,10 +80,10 @@ export class Image {
     mediaImage.setAttribute('tabindex', '0');
     mediaImage.setAttribute('alt', `${this.desc}`);
 
-    mediaCardInfo.classList.add('media-card_info');
-    mediaCardInfoText.classList.add('media-card_info__text');
+    mediaCardInfo.classList.add('mediacardinfo');
+    mediaCardInfoText.classList.add('media-cardinfotext');
 
-    mediaCardInfoHeart.classList.add('media-card_info__heart');
+    mediaCardInfoHeart.classList.add('mediacardinfoheart');
     mediaCardInfoHeart.setAttribute('tabindex', '0');
     mediaCardInfoHeart.setAttribute('aria-label', `${this.likes} likes cliquez pour ajouter un like`);
 
@@ -118,16 +98,28 @@ export class Image {
     heartNumber.innerHTML = this.likes;
 
     mediaCardInfo.appendChild(mediaCardInfoText);
-    mediaCardInfoText.append(title/*, price*/);
+    mediaCardInfoText.append(title/* , price */);
     mediaCardInfoHeart.append(heartNumber, heart);
     mediaCardInfo.appendChild(mediaCardInfoHeart);
 
     cardImage.append(mediaImage, mediaCardInfo);
 
-    cardImage.dataset['mediaTitle'] = this.titleContent;
+    cardImage.dataset.mediaTitle = this.titleContent;
 
     return cardImage;
   }
+}
 
-
+export default class MediaFactory {
+  /**
+   *
+   * @param {Object.<string, *>} mediaData
+   * @returns
+   */
+  static createMedia(mediaData) {
+    if (Object.prototype.hasOwnProperty.call(mediaData, 'image')) {
+      return new Image(mediaData.image, mediaData.photographerId, mediaData.likes, mediaData.id, mediaData.desc);
+    }
+    return new Video(mediaData.video, mediaData.photographerId, mediaData.likes, mediaData.id, mediaData.desc);
+  }
 }
